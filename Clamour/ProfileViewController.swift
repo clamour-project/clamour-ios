@@ -84,7 +84,7 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
             self.profileImage.image = editedImage
         }
         
-        //Dismiss the UIImagePicker after selection
+        //Dismisss the UIImagePicker after selection
         picker.dismiss(animated: true, completion: nil)
     }
     
