@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var btnEditProfile: UIButton!
+    @IBOutlet weak var userName: UILabel!
     
     var imagePicker = UIImagePickerController()
     
@@ -24,8 +25,28 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func editProfile(_ sender: Any) {
-        chooseSourceOfPhoto()
+        //chooseSourceOfPhoto()
+        var components = URLComponents()
+        
+        components.scheme = "https"
+        components.host = "clamour.herokuapp.com"
+        components.path = "/api"
+        
+        let request = URLRequest(url: components.url!)
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if error == nil {
+                if let data = data {
+                    let parsedData = String.init(data: data, encoding: String.Encoding.utf8)
+                    DispatchQueue.main.async {
+                        self.userName.text = parsedData
+                    }
+                }
+            }
+        }
+        task.resume()
     }
+    
     
     func chooseSourceOfPhoto()
     {

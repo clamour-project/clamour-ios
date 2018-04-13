@@ -27,7 +27,7 @@ class UploadViewController : UIViewController
         chooseSourceOfPhoto()
     }
     
-        func chooseSourceOfPhoto()
+    func chooseSourceOfPhoto()
     {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
@@ -96,12 +96,23 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
          If no need to edit the photo, use `UIImagePickerControllerOriginalImage`
          instead of `UIImagePickerControllerEditedImage`
          */
-        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
-            self.myImageView.image = editedImage
+        
+        //if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
+        //    self.myImageView.image = editedImage
+        //}
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.myImageView.image = image
+            submit(image: image)
+        } else if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.myImageView.image = image
+            submit(image: image)
         }
         
         //Dismiss the UIImagePicker after selection
         picker.dismiss(animated: true, completion: nil)
+        
+        
         btnUploadImage.isHidden=true
         btnDone.isEnabled=true
         btnReUploadImage.isEnabled=true
@@ -109,6 +120,33 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func submit(image: UIImage) {
+        
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        
+        guard let url = URL(string: "http://localhost:5555/image") else { return }
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        //request.httpBody = UIImagePNGRepresentation(image)
+        let imageData: Data = UIImageJPEGRepresentation(image, 0.4)!
+        let imageStr = imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+        request.httpBody = imageStr.data(using: String.Encoding.utf8)
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            if let error = error {
+                print("Something went wrong: \(error)")
+            }
+            
+            if let response = response {
+                print("Response: \n \(response)")
+            }
+        }
+        
+        dataTask.resume()
     }
     
 
