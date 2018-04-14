@@ -26,13 +26,11 @@ class ProfileViewController: UIViewController {
     
     @IBAction func editProfile(_ sender: Any) {
         //chooseSourceOfPhoto()
-        var components = URLComponents()
         
-        components.scheme = "https"
-        components.host = "clamour.herokuapp.com"
-        components.path = "/api"
+        let url = URL(string: "https://clamour-server.appspot.com/loader")
         
-        let request = URLRequest(url: components.url!)
+        //let request = URLRequest(url: components.url!)
+        let request = URLRequest(url: url!)
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             if error == nil {

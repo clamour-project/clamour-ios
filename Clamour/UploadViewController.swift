@@ -126,11 +126,13 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        guard let url = URL(string: "http://localhost:5555/image") else { return }
+        guard let url = URL(string: "https://clamour-server.appspot.com/loader") else { return }
+        //https://clamour-server.appspot.com/loader
+        //http://localhost:8080/loader
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
-        //request.httpBody = UIImagePNGRepresentation(image)
+        
         let imageData: Data = UIImageJPEGRepresentation(image, 0.4)!
         let imageStr = imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
         request.httpBody = imageStr.data(using: String.Encoding.utf8)
@@ -141,8 +143,8 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
                 print("Something went wrong: \(error)")
             }
             
-            if let response = response {
-                print("Response: \n \(response)")
+            if let data = data {
+                print(String.init(data: data, encoding: String.Encoding.utf8)!)
             }
         }
         
