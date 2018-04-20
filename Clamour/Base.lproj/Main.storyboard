@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="-1828" y="1940"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Clamour-->
         <scene sceneID="UGJ-vD-RB2">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="zEf-Yt-iQx" customClass="ProfileViewController" customModule="Clamour" customModuleProvider="target" sceneMemberID="viewController">
@@ -185,7 +185,7 @@ labore et dolore magna aliqua.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V9F-f5-6QK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="D5y-h6-j0u"/>
+                    <navigationItem key="navigationItem" title="Clamour" id="D5y-h6-j0u"/>
                     <connections>
                         <outlet property="btnEditProfile" destination="IEE-ub-GFt" id="R7w-gb-fIJ"/>
                         <outlet property="profileImage" destination="5Pz-II-ibc" id="P0a-dk-VAO"/>
