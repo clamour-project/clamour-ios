@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var btnEditProfile: UIButton!
     @IBOutlet weak var userName: UILabel!
@@ -18,8 +18,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.profileImage.layer.cornerRadius = profileImage.bounds.width/2
-        self.profileImage.layer.borderWidth = 1
-        self.profileImage.layer.borderColor = UIColor.lightGray.cgColor
+        //self.profileImage.layer.borderWidth = 1
+        //self.profileImage.layer.borderColor = UIColor.lightGray.cgColor
         
         //self.btnEditProfile.layer.cornerRadius = 5
     }
@@ -90,8 +90,36 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
     }
 }
+
+//MARK: - TableView
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: ProfileCell!
+        cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileCell
+        cell.profilePhoto.image = UIImage(named: "jl")
+        cell.profilePhoto.layer.cornerRadius = cell.profilePhoto.bounds.width/2
+        cell.username.text = "Username"
+        cell.profileInfo.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        cell.profilePhoto.focusOnFaces = true
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.row==0){
+            return 130;
+        } else { return 80; }
+    }
+    
+    
+}
+
 //MARK: - UIImagePickerControllerDelegate
-extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         /*
@@ -110,7 +138,4 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
