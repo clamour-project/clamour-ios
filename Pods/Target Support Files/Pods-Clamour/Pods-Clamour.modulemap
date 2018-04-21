@@ -1,0 +1,6 @@
+framework module Pods_Clamour {
+  umbrella header "Pods-Clamour-umbrella.h"
+
+  export *
+  module * { export * }
+}

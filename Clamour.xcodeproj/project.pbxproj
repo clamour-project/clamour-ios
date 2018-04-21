@@ -14,8 +14,11 @@
 		1D2171AF207C01F30052D824 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2171AE207C01F30052D824 /* MainTabController.swift */; };
 		1D2171B1207C043D0052D824 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2171B0207C043D0052D824 /* UploadViewController.swift */; };
 		1D4C224A207D04480089A4C7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4C2249207D04480089A4C7 /* ProfileViewController.swift */; };
+		2030A996E464B4D793FCA4DF /* Pods_Clamour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */; };
 		C3EFC67C208A114E00A83BAC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC67B208A114E00A83BAC /* ProfileCell.swift */; };
 		C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */; };
+		C3EFC682208A744600A83BAC /* ExpandableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */; };
+		C3EFC684208A822100A83BAC /* ExpandedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +31,13 @@
 		1D2171AE207C01F30052D824 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		1D2171B0207C043D0052D824 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		1D4C2249207D04480089A4C7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A8958AB42C9C13F7E4BF18BC /* Pods-Clamour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clamour.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clamour/Pods-Clamour.release.xcconfig"; sourceTree = "<group>"; };
+		B4D8024C592CC92D77278F24 /* Pods-Clamour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clamour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clamour/Pods-Clamour.debug.xcconfig"; sourceTree = "<group>"; };
+		BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clamour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EFC67B208A114E00A83BAC /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
+		C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewCell.swift; sourceTree = "<group>"; };
+		C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2030A996E464B4D793FCA4DF /* Pods_Clamour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092438B22206B2E65DB02CE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4D8024C592CC92D77278F24 /* Pods-Clamour.debug.xcconfig */,
+				A8958AB42C9C13F7E4BF18BC /* Pods-Clamour.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1D217190207BFB360052D824 = {
 			isa = PBXGroup;
 			children = (
 				1D21719B207BFB360052D824 /* Clamour */,
 				1D21719A207BFB360052D824 /* Products */,
+				092438B22206B2E65DB02CE3 /* Pods */,
+				B0F6FC1B461E946BE51412BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +82,36 @@
 		1D21719B207BFB360052D824 /* Clamour */ = {
 			isa = PBXGroup;
 			children = (
-				1D21719C207BFB360052D824 /* AppDelegate.swift */,
 				1D2171A0207BFB360052D824 /* Main.storyboard */,
+				1D21719C207BFB360052D824 /* AppDelegate.swift */,
 				1D2171A3207BFB370052D824 /* Assets.xcassets */,
 				1D2171A8207BFB370052D824 /* Info.plist */,
 				C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */,
 				1D2171AE207C01F30052D824 /* MainTabController.swift */,
 				1D2171B0207C043D0052D824 /* UploadViewController.swift */,
 				1D4C2249207D04480089A4C7 /* ProfileViewController.swift */,
-				C3EFC67B208A114E00A83BAC /* ProfileCell.swift */,
+				C3EFC685208A822700A83BAC /* Cells */,
 				1D2171A5207BFB370052D824 /* LaunchScreen.storyboard */,
 			);
 			path = Clamour;
+			sourceTree = "<group>";
+		};
+		B0F6FC1B461E946BE51412BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3EFC685208A822700A83BAC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3EFC67B208A114E00A83BAC /* ProfileCell.swift */,
+				C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */,
+				C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D2171AB207BFB370052D824 /* Build configuration list for PBXNativeTarget "Clamour" */;
 			buildPhases = (
+				ABFA56DB43E4EFC6B1143EA2 /* [CP] Check Pods Manifest.lock */,
 				1D217195207BFB360052D824 /* Sources */,
 				1D217196207BFB360052D824 /* Frameworks */,
 				1D217197207BFB360052D824 /* Resources */,
+				542C7F7F7725CC0733A2150A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +182,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		542C7F7F7725CC0733A2150A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Clamour/Pods-Clamour-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clamour/Pods-Clamour-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABFA56DB43E4EFC6B1143EA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clamour-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D217195207BFB360052D824 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -152,7 +231,9 @@
 				C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */,
 				1D21719D207BFB360052D824 /* AppDelegate.swift in Sources */,
 				C3EFC67C208A114E00A83BAC /* ProfileCell.swift in Sources */,
+				C3EFC684208A822100A83BAC /* ExpandedViewCell.swift in Sources */,
 				1D2171AF207C01F30052D824 /* MainTabController.swift in Sources */,
+				C3EFC682208A744600A83BAC /* ExpandableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +375,7 @@
 		};
 		1D2171AC207BFB370052D824 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D8024C592CC92D77278F24 /* Pods-Clamour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +394,7 @@
 		};
 		1D2171AD207BFB370052D824 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8958AB42C9C13F7E4BF18BC /* Pods-Clamour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -126,8 +126,8 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        guard let url = URL(string: "https://clamour-server.appspot.com/loader") else { return }
-        //https://clamour-server.appspot.com/loader
+        guard let url = URL(string: "https://clamour-server.appspot.com/clamour-api") else { return }
+        //https://clamour-server.appspot.com/clamour-api
         //http://localhost:8080/loader
         var request = URLRequest(url: url)
         
