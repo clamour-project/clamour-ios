@@ -46,7 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="R6A-yf-tBM"/>
                     </view>
                     <navigationItem key="navigationItem" id="bZy-72-bmB">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" style="plain" systemItem="redo" id="wui-V8-tiN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="redo" id="wui-V8-tiN">
                             <connections>
                                 <action selector="reUploadPhoto:" destination="Ji5-sj-wMD" id="ciO-Dj-BAf"/>
                             </connections>
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-DX-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159.2" y="1611.5442278860571"/>
+            <point key="canvasLocation" x="390" y="1746"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TR9-0l-JyT">
@@ -81,9 +81,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4d-zO-TiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2056.8000000000002" y="1611.5442278860571"/>
+            <point key="canvasLocation" x="1188" y="1746"/>
         </scene>
-        <!--View Controller-->
+        <!--Saved-->
         <scene sceneID="KYR-LM-dZJ">
             <objects>
                 <viewController id="nQf-E0-22u" sceneMemberID="viewController">
@@ -93,11 +93,11 @@
                         <color key="backgroundColor" red="1" green="0.55981058941700579" blue="0.55935568762367438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MLP-pv-KfG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="jGP-6x-D6l"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="heart" selectedImage="heart" id="jGP-6x-D6l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEa-oA-4RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1828" y="1940"/>
+            <point key="canvasLocation" x="-1945" y="1533"/>
         </scene>
         <!--Clamour-->
         <scene sceneID="UGJ-vD-RB2">
@@ -123,12 +123,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avx-Rk-igR">
-                                                    <rect key="frame" x="159.5" y="19" width="160.5" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-9V-JfN">
                                                     <rect key="frame" x="40" y="10" width="109.5" height="109.5"/>
                                                     <constraints>
@@ -138,8 +132,14 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="focusOnFaces" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avx-Rk-igR">
+                                                    <rect key="frame" x="164.5" y="19" width="155.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQK-b3-a5f">
-                                                    <rect key="frame" x="159" y="51" width="176" height="48"/>
+                                                    <rect key="frame" x="178" y="51" width="157" height="48"/>
                                                     <string key="text">Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed
 do eiusmod tempor incididunt ut
@@ -153,12 +153,14 @@ labore et dolore magna aliqua.</string>
                                                 <constraint firstAttribute="trailing" secondItem="nQK-b3-a5f" secondAttribute="trailing" constant="40" id="1JR-Lp-hP1"/>
                                                 <constraint firstAttribute="bottom" secondItem="nQK-b3-a5f" secondAttribute="bottom" priority="250" constant="10" id="2PC-mf-93t"/>
                                                 <constraint firstItem="Avx-Rk-igR" firstAttribute="top" secondItem="VRL-03-bVf" secondAttribute="topMargin" constant="8" id="6ic-P0-ZMM"/>
-                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="10" id="8R5-l3-3TG"/>
-                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="10" id="DxU-BR-ZGR"/>
+                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="8" symbolic="YES" id="DxU-BR-ZGR"/>
                                                 <constraint firstAttribute="bottom" secondItem="cLD-9V-JfN" secondAttribute="bottom" constant="10" id="Ixn-Vr-PK7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Avx-Rk-igR" secondAttribute="trailing" constant="40" id="b9j-6V-Wq2"/>
                                                 <constraint firstItem="nQK-b3-a5f" firstAttribute="top" secondItem="Avx-Rk-igR" secondAttribute="bottom" constant="8" id="exr-jY-q6q"/>
+                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="15" id="iue-9v-qNo"/>
                                                 <constraint firstItem="cLD-9V-JfN" firstAttribute="top" secondItem="VRL-03-bVf" secondAttribute="top" constant="10" id="lIp-rS-Kyk"/>
+                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="8" symbolic="YES" id="lOd-wa-l7S"/>
+                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="8" symbolic="YES" id="m57-Yc-5Bp"/>
                                                 <constraint firstItem="cLD-9V-JfN" firstAttribute="leading" secondItem="VRL-03-bVf" secondAttribute="leading" constant="40" id="vi6-Y4-aBD"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -224,13 +226,7 @@ labore et dolore magna aliqua.</string>
                         <viewLayoutGuide key="safeArea" id="V9F-f5-6QK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Clamour" id="D5y-h6-j0u">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="5sP-3a-ePz">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1gl-p9-mWD">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="5sP-3a-ePz"/>
                     </navigationItem>
                     <connections>
                         <outlet property="btnEditProfile" destination="IEE-ub-GFt" id="R7w-gb-fIJ"/>
@@ -288,7 +284,7 @@ labore et dolore magna aliqua.</string>
                     <viewLayoutGuide key="safeArea" id="mT8-Jy-Mlq"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="-4247.1999999999998" y="1983.9580209895055"/>
+            <point key="canvasLocation" x="-3897" y="1473"/>
         </scene>
         <!--Explore-->
         <scene sceneID="H2Z-jV-kDO">
@@ -300,15 +296,16 @@ labore et dolore magna aliqua.</string>
                         <color key="backgroundColor" red="0.75570999327676136" green="1" blue="0.79729917520985816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="3Qk-Z5-mzP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" id="m6k-I5-NCz"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore" selectedImage="explore" id="m6k-I5-NCz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8No-rZ-Pr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="870.31484257871068"/>
+            <point key="canvasLocation" x="2" y="566"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="mtK-St-FvJ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QqY-cT-uXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="x8b-eJ-6lX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgI-QS-KF7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -316,11 +313,10 @@ labore et dolore magna aliqua.</string>
                         <color key="backgroundColor" red="0.61312892664886354" green="0.96057621987040021" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Xrz-kJ-ANO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" id="yz5-e4-qN7"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" selectedImage="calendar" id="yz5-e4-qN7"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QqY-cT-uXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-102" y="-57"/>
+            <point key="canvasLocation" x="-698" y="-224"/>
         </scene>
         <!--Main Tab Controller-->
         <scene sceneID="G1u-aG-Brb">
@@ -341,13 +337,13 @@ labore et dolore magna aliqua.</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCB-02-Mda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1828" y="495"/>
+            <point key="canvasLocation" x="-1886" y="307"/>
         </scene>
         <!--Upload-->
         <scene sceneID="oTe-k3-UDy">
             <objects>
                 <navigationController storyboardIdentifier="UIImagePickerController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v5x-yD-woH" customClass="UIImagePickerController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upload" id="8Oz-Od-Nkf"/>
+                    <tabBarItem key="tabBarItem" title="Upload" image="add" selectedImage="add" id="8Oz-Od-Nkf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1eH-3c-jud">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -360,13 +356,13 @@ labore et dolore magna aliqua.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSL-4v-81Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.80000000000001" y="1611.5442278860571"/>
+            <point key="canvasLocation" x="-473" y="1496"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="KQf-KK-zYA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gk5-5u-ZEo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="circle-user-7" id="1p3-Gy-loU"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="1p3-Gy-loU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="akB-ex-kqU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -379,11 +375,15 @@ labore et dolore magna aliqua.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCl-Ud-1ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3279.1999999999998" y="1220.2398800599701"/>
+            <point key="canvasLocation" x="-2980" y="960"/>
         </scene>
     </scenes>
     <resources>
-        <image name="circle-user-7" width="30" height="30"/>
+        <image name="add" width="25" height="25"/>
+        <image name="calendar" width="23" height="23"/>
+        <image name="explore" width="25" height="25"/>
+        <image name="heart" width="28" height="25"/>
         <image name="jl" width="1280" height="1809"/>
+        <image name="profile" width="23" height="25"/>
     </resources>
 </document>
