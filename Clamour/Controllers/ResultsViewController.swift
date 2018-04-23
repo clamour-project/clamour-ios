@@ -30,6 +30,11 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     override func viewDidLoad() {
         super.viewDidLoad()
         carousel.type = .coverFlow2
+        
+        print("\(dataResult.type)")
+        print("\(dataResult.suitableTypes)")
+        print("\(dataResult.adjacentColors)")
+        print("\(dataResult.coplementaryColors)")
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {

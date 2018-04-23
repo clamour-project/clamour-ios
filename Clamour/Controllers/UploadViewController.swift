@@ -146,12 +146,34 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let data = dataResult {
-            print(String.init(data: data, encoding: String.Encoding.utf8)!)
-            self.dataResult = data
+            let destVC : ResultsViewController = segue.destination as! ResultsViewController
+            let json = try! JSON(data: data)
+            
+            var type: String = ""
+            if let t = json["types"][0].string { type = t }
+            
+            var stypes = json["suitable-types"].arrayValue.map({$0.stringValue})
+            
+            var adjCol: [UIColor] = []
+            for (index, object) in json["adjacent-colors"] {
+                adjCol += [UIColor(
+                    red: CGFloat(object["red"].double!),
+                    green: CGFloat(object["green"].double!),
+                    blue: CGFloat(object["blue"].double!),
+                    alpha: 1)]
+            }
+            
+            var copCol: [UIColor] = []
+            for (index, object) in json["coplementary-colors"] {
+                copCol += [UIColor(
+                    red: CGFloat(object["red"].double!),
+                    green: CGFloat(object["green"].double!),
+                    blue: CGFloat(object["blue"].double!),
+                    alpha: 1)]
+            }
+            
+            destVC.dataResult = Result.init(type: type, suitable: stypes, adjColors: adjCol, copColors: copCol)
         }
-        
-        
-        let destVC : ResultsViewController = segue.destination as! ResultsViewController
         
     }
     
