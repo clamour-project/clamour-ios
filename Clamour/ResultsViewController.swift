@@ -11,6 +11,8 @@ import UIKit
 
 class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
     
+    var dataResult: String = ""
+    
     var items: [Int] = []
     
     let numberOfResultingPictures: Int = 10

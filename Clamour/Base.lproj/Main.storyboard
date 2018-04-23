@@ -36,6 +36,7 @@
                     <navigationItem key="navigationItem" id="bZy-72-bmB"/>
                     <connections>
                         <outlet property="myImageView" destination="ypk-xN-Nl2" id="9cJ-we-Jvz"/>
+                        <segue destination="Msk-rp-RDf" kind="presentation" identifier="resultsShow" id="Ecu-A2-tE0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-DX-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4d-zO-TiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1946" y="2096"/>
+            <point key="canvasLocation" x="-1946" y="2131"/>
         </scene>
         <!--Saved-->
         <scene sceneID="KYR-LM-dZJ">

@@ -14,9 +14,7 @@ class UploadViewController : UIViewController
     @IBOutlet weak var myImageView: UIImageView!
     var imagePicker = UIImagePickerController()
     
-    @IBAction func reUploadPhoto(_ sender: UIButton) {
-        chooseSourceOfPhoto()
-    }
+    var dataResult: String = ""
     
     func chooseSourceOfPhoto()
     {
@@ -77,7 +75,7 @@ class UploadViewController : UIViewController
         chooseSourceOfPhoto()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if (myImageView.image == nil) {
             chooseSourceOfPhoto()
         }
@@ -114,22 +112,12 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
     func submit(image: UIImage) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        guard let url = URL(string: "https://server-clamour.appspot.com/clamour-api") else
-        {
-            return
-        }
-        //https://clamour-server.appspot.com/clamour-api
-        //http://localhost:8080/loader
+        guard let url = URL(string: "https://server-clamour.appspot.com/clamour-api") else { return }
         var request = URLRequest(url: url)
-        
         request.httpMethod = "POST"
         
         let imageData: Data = UIImageJPEGRepresentation(image, 0.4)!
@@ -140,14 +128,25 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             
             if let error = error {
                 print("Something went wrong: \(error)")
+                self.dataResult = "Something went wrong: \(error)"
             }
             
             if let data = data {
                 print(String.init(data: data, encoding: String.Encoding.utf8)!)
+                self.dataResult = String.init(data: data, encoding: String.Encoding.utf8)!
+            }
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "resultsShow", sender: self)
             }
         }
         
         dataTask.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC : ResultsViewController = segue.destination as! ResultsViewController
+        destVC.dataResult = self.dataResult
     }
     
 
