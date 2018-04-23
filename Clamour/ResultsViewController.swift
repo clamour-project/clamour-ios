@@ -48,10 +48,16 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             //don't do anything specific to the index within
             //this `if ... else` statement because the view will be
             //recycled and used with other index values later
-            itemView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-            itemView.image = UIImage(named: "page.png")
+            itemView = UIImageView(frame: CGRect(x: carousel.frame.width*0.1, y: carousel.frame.height*0.1, width: carousel.frame.width*0.8, height: carousel.frame.height*0.8))
+            itemView.image = UIImage(named: "jl")
             
-            itemView.contentMode = .center
+            // CONTENT MODE
+            itemView.contentMode = .scaleAspectFill
+            //itemView.contentMode = .center
+            
+            // Round corners
+            itemView.layer.cornerRadius = itemView.bounds.width/12
+            itemView.clipsToBounds = true
             
             label = UILabel(frame: itemView.bounds)
             label.backgroundColor = .clear
