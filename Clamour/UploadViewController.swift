@@ -12,16 +12,7 @@ class UploadViewController : UIViewController
 {
     
     @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var btnUploadImage: UIButton!
-    @IBOutlet weak var btnReUploadImage: UIBarButtonItem!
-    @IBOutlet weak var btnDone: UIBarButtonItem!
-    
     var imagePicker = UIImagePickerController()
-    
-
-    @IBAction func uploadPhoto(_ sender: UIButton) {
-        chooseSourceOfPhoto()
-    }
     
     @IBAction func reUploadPhoto(_ sender: UIButton) {
         chooseSourceOfPhoto()
@@ -60,7 +51,7 @@ class UploadViewController : UIViewController
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             //If you dont want to edit the photo then you can set allowsEditing to false
-            imagePicker.allowsEditing = true
+            imagePicker.allowsEditing = false
             imagePicker.delegate = self
             self.present(imagePicker, animated: true, completion: nil)
         }
@@ -75,7 +66,7 @@ class UploadViewController : UIViewController
     func openGallary(){
         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         //If you dont want to edit the photo then you can set allowsEditing to false
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
         
@@ -83,7 +74,17 @@ class UploadViewController : UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnDone.isEnabled=false
+        chooseSourceOfPhoto()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (myImageView.image == nil) {
+            chooseSourceOfPhoto()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        myImageView.image = nil
     }
 }
 
@@ -111,11 +112,6 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         
         //Dismiss the UIImagePicker after selection
         picker.dismiss(animated: true, completion: nil)
-        
-        
-        btnUploadImage.isHidden=true
-        btnDone.isEnabled=true
-        btnReUploadImage.isEnabled=true
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -126,7 +122,10 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        guard let url = URL(string: "https://clamour-server.appspot.com/clamour-api") else { return }
+        guard let url = URL(string: "https://server-clamour.appspot.com/clamour-api") else
+        {
+            return
+        }
         //https://clamour-server.appspot.com/clamour-api
         //http://localhost:8080/loader
         var request = URLRequest(url: url)

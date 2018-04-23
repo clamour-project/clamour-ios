@@ -11,6 +11,8 @@ import ExpandableCell
 class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: ExpandableTableView!
     
+    
+    
     var imagePicker = UIImagePickerController()
     
     override func viewDidLayoutSubviews() {
@@ -98,24 +100,28 @@ extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
         if (indexPath.row == 1) {
             let cell: ExpandedViewCell!
-            cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell") as! ExpandedViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell1") as! ExpandedViewCell
+            return [cell]
+        } else if (indexPath.row == 2) {
+            let cell: ExpandedViewCell!
+            cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell2") as! ExpandedViewCell
             return [cell]
         }
         return nil;
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
-        return [90]
+        return [100]
     }
     
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.row == 0) { return 130; }
-        return 35;
+        if (indexPath.row == 0) { return 170; }
+        return 40;
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        return 2;
+        return 3;
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -130,9 +136,13 @@ extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/
             cell.profilePhoto.focusOnFaces = true
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell.frame.width)
             return cell
+        } else if (indexPath.row == 1) {
+            let cell: ExpandableCell!
+            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell1") as! ExpandableCell
+            return cell
         } else {
             let cell: ExpandableCell!
-            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell") as! ExpandableCell
+            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell2") as! ExpandableCell
             return cell
         }
     }
