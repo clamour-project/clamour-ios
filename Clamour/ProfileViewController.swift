@@ -11,15 +11,11 @@ import ExpandableCell
 class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: ExpandableTableView!
     
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var btnEditProfile: UIButton!
-    @IBOutlet weak var userName: UILabel!
-    
     var imagePicker = UIImagePickerController()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.profileImage.layer.cornerRadius = profileImage.bounds.width/2
+        //self.profileImage.layer.cornerRadius = profileImage.bounds.width/2
         //self.profileImage.layer.borderWidth = 1
         //self.profileImage.layer.borderColor = UIColor.lightGray.cgColor
         
@@ -36,12 +32,12 @@ class ProfileViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             if error == nil {
-                if let data = data {
+                /*if let data = data {
                     let parsedData = String.init(data: data, encoding: String.Encoding.utf8)
                     DispatchQueue.main.async {
-                        self.userName.text = parsedData
+                       // self.userName.text = parsedData
                     }
-                }
+                }*/
             }
         }
         task.resume()
@@ -182,9 +178,12 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
          If no need to edit the photo, use `UIImagePickerControllerOriginalImage`
          instead of `UIImagePickerControllerEditedImage`
          */
+    
+       /*
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             self.profileImage.image = editedImage
         }
+        */
         
         //Dismisss the UIImagePicker after selection
         picker.dismiss(animated: true, completion: nil)

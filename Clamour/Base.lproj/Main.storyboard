@@ -229,60 +229,10 @@ labore et dolore magna aliqua.</string>
                         <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="5sP-3a-ePz"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnEditProfile" destination="IEE-ub-GFt" id="R7w-gb-fIJ"/>
-                        <outlet property="profileImage" destination="5Pz-II-ibc" id="P0a-dk-VAO"/>
                         <outlet property="tableView" destination="aXO-LB-0xZ" id="5AA-pu-S18"/>
-                        <outlet property="userName" destination="1Qx-BT-Jtl" id="Vtm-tK-52L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9p-RN-yrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="JAi-u6-SPF">
-                    <rect key="frame" x="0.0" y="0.0" width="374.5" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45E-HG-nmS">
-                            <rect key="frame" x="0.0" y="0.0" width="374.5" height="200"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jl" translatesAutoresizingMaskIntoConstraints="NO" id="5Pz-II-ibc">
-                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="200"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="02i-dE-Ie5" userLabel="height = 70"/>
-                                        <constraint firstAttribute="width" constant="187.5" id="wDN-mU-iua" userLabel="width = 70"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="focusOnFaces" value="NO"/>
-                                    </userDefinedRuntimeAttributes>
-                                </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mV-Bn-Uxw">
-                                    <rect key="frame" x="187.5" y="0.0" width="187" height="200"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEE-ub-GFt">
-                                            <rect key="frame" x="0.0" y="162" width="188" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                            <state key="normal" title="Edit profile">
-                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="editProfile:" destination="zEf-Yt-iQx" eventType="touchUpInside" id="dff-OJ-gmq"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qx-BT-Jtl">
-                                            <rect key="frame" x="0.0" y="47" width="187" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </view>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="mT8-Jy-Mlq"/>
-                </stackView>
             </objects>
             <point key="canvasLocation" x="-3897" y="1473"/>
         </scene>
@@ -305,7 +255,6 @@ labore et dolore magna aliqua.</string>
         <!--Calendar-->
         <scene sceneID="mtK-St-FvJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QqY-cT-uXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="x8b-eJ-6lX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgI-QS-KF7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -315,6 +264,7 @@ labore et dolore magna aliqua.</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" selectedImage="calendar" id="yz5-e4-qN7"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QqY-cT-uXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-698" y="-224"/>
         </scene>
@@ -383,7 +333,6 @@ labore et dolore magna aliqua.</string>
         <image name="calendar" width="23" height="23"/>
         <image name="explore" width="25" height="25"/>
         <image name="heart" width="28" height="25"/>
-        <image name="jl" width="1280" height="1809"/>
         <image name="profile" width="23" height="25"/>
     </resources>
 </document>
