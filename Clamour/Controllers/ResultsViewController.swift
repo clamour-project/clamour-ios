@@ -12,7 +12,7 @@ import iCarousel
 
 class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
     
-    var dataResult: String = ""
+    var dataResult: Result!
     
     var items: [Int] = []
     
@@ -57,7 +57,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             //itemView.contentMode = .center
             
             // Round corners
-            itemView.layer.cornerRadius = itemView.bounds.width/12
+            itemView.layer.cornerRadius = itemView.bounds.width/24
             itemView.clipsToBounds = true
             
             label = UILabel(frame: itemView.bounds)

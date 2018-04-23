@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class UploadViewController : UIViewController
 {
@@ -14,7 +15,7 @@ class UploadViewController : UIViewController
     @IBOutlet weak var myImageView: UIImageView!
     var imagePicker = UIImagePickerController()
     
-    var dataResult: String = ""
+    var dataResult: Data?
     
     func chooseSourceOfPhoto()
     {
@@ -127,12 +128,12 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             
             if let error = error {
                 print("Something went wrong: \(error)")
-                self.dataResult = "Something went wrong: \(error)"
+                self.dataResult = nil
             }
             
             if let data = data {
                 print(String.init(data: data, encoding: String.Encoding.utf8)!)
-                self.dataResult = String.init(data: data, encoding: String.Encoding.utf8)!
+                self.dataResult = data
             }
             
             DispatchQueue.main.async {
@@ -144,8 +145,14 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let data = dataResult {
+            print(String.init(data: data, encoding: String.Encoding.utf8)!)
+            self.dataResult = data
+        }
+        
+        
         let destVC : ResultsViewController = segue.destination as! ResultsViewController
-        destVC.dataResult = self.dataResult
+        
     }
     
 }
