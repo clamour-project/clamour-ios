@@ -21,7 +21,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         super.awakeFromNib()
         for i in 0 ... numberOfResultingPictures {
             items.append(i)
-        }
+        } //
     }
     
     override func viewDidLoad() {
