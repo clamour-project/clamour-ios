@@ -132,7 +132,6 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             }
             
             if let data = data {
-                print(String.init(data: data, encoding: String.Encoding.utf8)!)
                 self.dataResult = data
             }
             
@@ -152,10 +151,10 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             var type: String = ""
             if let t = json["types"][0].string { type = t }
             
-            var stypes = json["suitable-types"].arrayValue.map({$0.stringValue})
+            let stypes = json["suitable-types"].arrayValue.map({$0.stringValue})
             
             var adjCol: [UIColor] = []
-            for (index, object) in json["adjacent-colors"] {
+            for (_, object) in json["adjacent-colors"] {
                 adjCol += [UIColor(
                     red: CGFloat(object["red"].double!),
                     green: CGFloat(object["green"].double!),
@@ -164,7 +163,7 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             }
             
             var copCol: [UIColor] = []
-            for (index, object) in json["coplementary-colors"] {
+            for (_, object) in json["coplementary-colors"] {
                 copCol += [UIColor(
                     red: CGFloat(object["red"].double!),
                     green: CGFloat(object["green"].double!),
@@ -173,6 +172,7 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             }
             
             destVC.dataResult = Result.init(type: type, suitable: stypes, adjColors: adjCol, copColors: copCol)
+            destVC.miniatureImage = myImageView.image
         }
         
     }

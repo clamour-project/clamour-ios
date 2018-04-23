@@ -12,6 +12,8 @@ import iCarousel
 
 class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
     
+    @IBOutlet weak var miniature: UIImageView!
+    var miniatureImage: UIImage!
     var dataResult: Result!
     
     var items: [Int] = []
@@ -30,6 +32,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     override func viewDidLoad() {
         super.viewDidLoad()
         carousel.type = .coverFlow2
+        
+        miniature.image = miniatureImage
+        miniature.layer.cornerRadius = miniature.bounds.width/12
         
         print("\(dataResult.type)")
         print("\(dataResult.suitableTypes)")
@@ -54,7 +59,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             //don't do anything specific to the index within
             //this `if ... else` statement because the view will be
             //recycled and used with other index values later
-            itemView = UIImageView(frame: CGRect(x: carousel.frame.width*0.1, y: carousel.frame.height*0.1, width: carousel.frame.width*0.8, height: carousel.frame.height*0.8))
+            itemView = UIImageView(frame: CGRect(x: carousel.frame.width*0.1, y: 0, width: carousel.frame.width*0.8, height: carousel.frame.height))
             itemView.image = UIImage(named: "jl")
             
             // CONTENT MODE
@@ -89,6 +94,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         }
         return value
     }
+}
 
+extension ResultsViewController {
     
 }
