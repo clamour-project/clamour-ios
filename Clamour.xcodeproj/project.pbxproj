@@ -15,7 +15,6 @@
 		1D348080208BAB6D0070CD17 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D34807F208BAB6D0070CD17 /* ResultsViewController.swift */; };
 		1D4C224A207D04480089A4C7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4C2249207D04480089A4C7 /* ProfileViewController.swift */; };
 		2030A996E464B4D793FCA4DF /* Pods_Clamour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */; };
-		2A3B6E23208DED5F007DE08B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B6E22208DED5F007DE08B /* iCarousel.m */; };
 		2A3B6E25208DEDDD007DE08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B6E24208DEDDD007DE08B /* Assets.xcassets */; };
 		C3EFC67C208A114E00A83BAC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC67B208A114E00A83BAC /* ProfileCell.swift */; };
 		C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */; };
@@ -32,11 +31,8 @@
 		1D2171AE207C01F30052D824 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		1D2171B0207C043D0052D824 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		1D34807F208BAB6D0070CD17 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		1D348083208BB03F0070CD17 /* Clamour-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clamour-Bridging-Header.h"; sourceTree = "<group>"; };
 		1D348087208BB3FD0070CD17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1D4C2249207D04480089A4C7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		2A3B6E21208DED5F007DE08B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
-		2A3B6E22208DED5F007DE08B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		2A3B6E24208DEDDD007DE08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8958AB42C9C13F7E4BF18BC /* Pods-Clamour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clamour.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clamour/Pods-Clamour.release.xcconfig"; sourceTree = "<group>"; };
 		B4D8024C592CC92D77278F24 /* Pods-Clamour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clamour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clamour/Pods-Clamour.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,7 +67,6 @@
 		1D217190207BFB360052D824 = {
 			isa = PBXGroup;
 			children = (
-				1D348082208BB0000070CD17 /* iCarousel */,
 				1D21719B207BFB360052D824 /* Clamour */,
 				1D21719A207BFB360052D824 /* Products */,
 				092438B22206B2E65DB02CE3 /* Pods */,
@@ -103,16 +98,6 @@
 				1D2171A5207BFB370052D824 /* LaunchScreen.storyboard */,
 			);
 			path = Clamour;
-			sourceTree = "<group>";
-		};
-		1D348082208BB0000070CD17 /* iCarousel */ = {
-			isa = PBXGroup;
-			children = (
-				2A3B6E21208DED5F007DE08B /* iCarousel.h */,
-				2A3B6E22208DED5F007DE08B /* iCarousel.m */,
-				1D348083208BB03F0070CD17 /* Clamour-Bridging-Header.h */,
-			);
-			path = iCarousel;
 			sourceTree = "<group>";
 		};
 		B0F6FC1B461E946BE51412BE /* Frameworks */ = {
@@ -216,6 +201,7 @@
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -224,6 +210,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -256,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D2171B1207C043D0052D824 /* UploadViewController.swift in Sources */,
-				2A3B6E23208DED5F007DE08B /* iCarousel.m in Sources */,
 				1D4C224A207D04480089A4C7 /* ProfileViewController.swift in Sources */,
 				C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */,
 				1D21719D207BFB360052D824 /* AppDelegate.swift in Sources */,
@@ -413,10 +399,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z3U2RC4H7;
 				INFOPLIST_FILE = Clamour/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = NaUKMA.Clamour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "iCarousel/Clamour-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,10 +421,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z3U2RC4H7;
 				INFOPLIST_FILE = Clamour/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = NaUKMA.Clamour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "iCarousel/Clamour-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

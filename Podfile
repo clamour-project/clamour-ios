@@ -11,4 +11,5 @@ target 'Clamour' do
 	pod 'IGListKit', '~> 2.0.0'
 	pod 'DZNEmptyDataSet'
 	pod 'FSCalendar'
+	pod 'iCarousel'
 end
