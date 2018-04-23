@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-DX-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="1746"/>
+            <point key="canvasLocation" x="-1946" y="1403"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="TR9-0l-JyT">
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4d-zO-TiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="1746"/>
+            <point key="canvasLocation" x="-1946" y="2096"/>
         </scene>
         <!--Saved-->
         <scene sceneID="KYR-LM-dZJ">
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEa-oA-4RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1945" y="1533"/>
+            <point key="canvasLocation" x="-1151" y="672"/>
         </scene>
         <!--Clamour-->
         <scene sceneID="UGJ-vD-RB2">
@@ -266,7 +266,7 @@ labore et dolore magna aliqua.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9p-RN-yrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3898.4000000000001" y="1472.1139430284859"/>
+            <point key="canvasLocation" x="-386" y="1403"/>
         </scene>
         <!--Explore-->
         <scene sceneID="H2Z-jV-kDO">
@@ -282,7 +282,7 @@ labore et dolore magna aliqua.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8No-rZ-Pr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="566"/>
+            <point key="canvasLocation" x="-2646" y="672"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="mtK-St-FvJ">
@@ -298,7 +298,7 @@ labore et dolore magna aliqua.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqY-cT-uXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-698" y="-224"/>
+            <point key="canvasLocation" x="-3415" y="672"/>
         </scene>
         <!--Main Tab Controller-->
         <scene sceneID="G1u-aG-Brb">
@@ -319,7 +319,7 @@ labore et dolore magna aliqua.</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCB-02-Mda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1886" y="307"/>
+            <point key="canvasLocation" x="-1946" y="-224"/>
         </scene>
         <!--Upload-->
         <scene sceneID="oTe-k3-UDy">
@@ -338,7 +338,7 @@ labore et dolore magna aliqua.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSL-4v-81Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-473" y="1496"/>
+            <point key="canvasLocation" x="-1946" y="672"/>
         </scene>
         <!--Profile-->
         <scene sceneID="KQf-KK-zYA">
@@ -357,7 +357,7 @@ labore et dolore magna aliqua.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCl-Ud-1ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2980" y="960"/>
+            <point key="canvasLocation" x="-386" y="672"/>
         </scene>
     </scenes>
     <resources>
