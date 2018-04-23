@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" id="bZy-72-bmB"/>
                     <connections>
                         <outlet property="myImageView" destination="ypk-xN-Nl2" id="9cJ-we-Jvz"/>
-                        <segue destination="Msk-rp-RDf" kind="presentation" identifier="resultsShow" id="Ecu-A2-tE0"/>
+                        <segue destination="Msk-rp-RDf" kind="push" identifier="resultsShow" id="ECC-ts-T0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihs-DX-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,6 +64,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="T1c-Kn-avs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rgr-LQ-eSR"/>
                     <connections>
                         <outlet property="carousel" destination="mGF-ug-hwS" id="oXc-Sx-FfI"/>
                     </connections>

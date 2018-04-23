@@ -113,7 +113,6 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func submit(image: UIImage) {
-        
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         guard let url = URL(string: "https://server-clamour.appspot.com/clamour-api") else { return }
@@ -148,8 +147,6 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         let destVC : ResultsViewController = segue.destination as! ResultsViewController
         destVC.dataResult = self.dataResult
     }
-    
-
     
 }
 
