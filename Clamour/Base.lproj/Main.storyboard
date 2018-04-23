@@ -68,16 +68,30 @@
             </objects>
             <point key="canvasLocation" x="390" y="1746"/>
         </scene>
-        <!--View Controller-->
+        <!--Data Source-->
         <scene sceneID="TR9-0l-JyT">
             <objects>
-                <viewController id="Msk-rp-RDf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewController" id="Msk-rp-RDf" customClass="ResultsViewController" customModule="Clamour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v6a-cd-vAs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-ug-hwS" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Msk-rp-RDf" id="28Y-Wz-aaH"/>
+                                    <outlet property="delegate" destination="Msk-rp-RDf" id="EfZ-dO-6k0"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="T1c-Kn-avs"/>
                     </view>
+                    <connections>
+                        <outlet property="carousel" destination="mGF-ug-hwS" id="oXc-Sx-FfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4d-zO-TiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +104,7 @@
                     <view key="view" contentMode="scaleToFill" id="DNs-Md-apZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.55981058941700579" blue="0.55935568762367438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="MLP-pv-KfG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Saved" image="heart" selectedImage="heart" id="jGP-6x-D6l"/>
