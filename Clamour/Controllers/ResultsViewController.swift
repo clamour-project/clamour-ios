@@ -38,8 +38,6 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = 5
         carousel.reloadData()
-    
-        print("Count of items: \(images.count)")
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {
