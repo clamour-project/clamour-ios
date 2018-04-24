@@ -65,15 +65,31 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         itemView.layer.cornerRadius = 5
         itemView.clipsToBounds = true
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector(("tappedImage:")))
-        itemView.addGestureRecognizer(tapRecognizer)
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ResultsViewController.tapDetected))
         itemView.isUserInteractionEnabled = true
+        itemView.addGestureRecognizer(singleTap)
+
         
         return itemView
     }
     
-    func tappedImage(sender: UIImageView) {
-        print("tapped!")
+    
+    
+    @objc func tapDetected() {
+        let image = images[carousel.currentItemIndex]
+        if let data = UIImageJPEGRepresentation(image, 0.8) {
+            let code = UserDefaults.standard.integer(forKey: "lastFoundImage")
+            let filename = getDocumentsDirectory().appendingPathComponent("f\(code).jpeg")
+            try? data.write(to: filename)
+            print("Image saved in documents")
+            UserDefaults.standard.set(code + 1, forKey: "lastFoundImage")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
     

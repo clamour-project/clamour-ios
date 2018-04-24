@@ -22,23 +22,6 @@ class ProfileViewController: UIViewController {
     
     @IBAction func editProfile(_ sender: Any) {
         //chooseSourceOfPhoto()
-        
-        let url = URL(string: "https://clamour-server.appspot.com/loader")
-        
-        //let request = URLRequest(url: components.url!)
-        let request = URLRequest(url: url!)
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
-            if error == nil {
-                /*if let data = data {
-                    let parsedData = String.init(data: data, encoding: String.Encoding.utf8)
-                    DispatchQueue.main.async {
-                       // self.userName.text = parsedData
-                    }
-                }*/
-            }
-        }
-        task.resume()
     }
     
     
@@ -85,15 +68,36 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.expandableDelegate = self
+        
     }
     
+    var lastImagesCount = 0
     override func viewWillAppear(_ animated: Bool) {
         tableView.animation = .right
+        
+        if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
+            print("App has launched before")
+        } else {
+            print("This is the first launch ever!")
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            UserDefaults.standard.set(0, forKey: "lastFoundImage")
+            UserDefaults.standard.set(0, forKey: "lastSearchedImage")
+            UserDefaults.standard.synchronize()
+        }
     }
     
+    var isOpened = false
     override func viewDidAppear(_ animated: Bool) {
-        tableView.openAll()
+        if (!isOpened) {
+            tableView.openAll()
+            isOpened = true
+        }
         tableView.animation = .none
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }
 
@@ -145,8 +149,6 @@ extension ProfileViewController: ExpandableDelegate {
         }
     }
     
-    
-    
     func expandableTableView(_ expandableTableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -175,18 +177,22 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return UserDefaults.standard.integer(forKey: "lastFoundImage")
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryItem", for: indexPath) as! CategoryCollectionViewCell
         
-        cell.imageView.image = UIImage(named: "jl")
+        let code = UserDefaults.standard.integer(forKey: "lastFoundImage")
+        cell.imageView.image = UIImage(contentsOfFile: getDocumentsDirectory()
+            .appendingPathComponent("f\(code - 1 - indexPath.row).jpeg").path)
         cell.imageView.layer.cornerRadius = cell.imageView.bounds.height/2
         cell.clipsToBounds = true
         cell.imageView.contentMode = .scaleAspectFill
