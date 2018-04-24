@@ -8,8 +8,9 @@ target 'Clamour' do
   # Pods for Clamour
 	pod 'ExpandableCell'
 	pod 'SwiftyJSON'
-	pod 'IGListKit', '~> 2.0.0'
 	pod 'DZNEmptyDataSet'
 	pod 'FSCalendar'
 	pod 'iCarousel'
+	pod 'ComplimentaryGradientView'
+    pod 'Realm'
 end

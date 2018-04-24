@@ -1,36 +1,42 @@
 PODS:
+  - ComplimentaryGradientView (0.1.7)
   - DZNEmptyDataSet (1.8.1)
   - ExpandableCell (1.2.2)
   - FSCalendar (2.7.9)
   - iCarousel (1.8.3)
-  - IGListKit (2.0.0)
+  - Realm (3.4.0):
+    - Realm/Headers (= 3.4.0)
+  - Realm/Headers (3.4.0)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - ComplimentaryGradientView
   - DZNEmptyDataSet
   - ExpandableCell
   - FSCalendar
   - iCarousel
-  - IGListKit (~> 2.0.0)
+  - Realm
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - ComplimentaryGradientView
     - DZNEmptyDataSet
     - ExpandableCell
     - FSCalendar
     - iCarousel
-    - IGListKit
+    - Realm
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ComplimentaryGradientView: 890f99feb7864d95ac2dc6b622afb3b81e10ac5c
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
-  IGListKit: ee255e4e61865bc3e01ca96b690c5435c2887849
+  Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 87e2224f357dbe2e972ba315089e247ff4c53acc
+PODFILE CHECKSUM: 46843310c450b95152e7742ffa15128bfe4ab490
 
 COCOAPODS: 1.5.0
