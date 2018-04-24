@@ -105,7 +105,11 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        let imageData: Data = UIImageJPEGRepresentation(image, 0.4)!
+        var resizedImage = image
+        if (image.size.width >= 700) {
+            resizedImage = image.resizeWithWidth(width: 700)!
+        }
+        let imageData: Data = UIImageJPEGRepresentation(resizedImage, 0.4)!
         let imageStr = imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
         
         request.httpBody = imageStr.data(using: String.Encoding.utf8)
@@ -162,5 +166,19 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         
     }
     
+}
+
+extension UIImage {
+    func resizeWithWidth(width: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
 }
 

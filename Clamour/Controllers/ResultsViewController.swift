@@ -22,12 +22,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     @IBOutlet weak var carousel: iCarousel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
     
     func convertBase64ToImage(base64String: String) -> UIImage {
         let decodedData = NSData(base64Encoded: base64String, options: NSData.Base64DecodingOptions(rawValue: 0) )
@@ -39,36 +36,34 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         super.viewDidLoad()
         carousel.type = .cylinder
         miniature.image = miniatureImage
-        miniature.layer.cornerRadius = miniature.bounds.width/12
+        miniature.layer.cornerRadius = 5
+        carousel.reloadData()
+    
         print("Count of items: \(images.count)")
     }
-    
     
     func numberOfItems(in carousel: iCarousel) -> Int {
         for i in 0 ... dataResult.suitableClothes.count-1 {
             images.append(convertBase64ToImage(base64String: dataResult.suitableClothes[i]))
         }
-        return images.count
+        return dataResult.suitableClothes.count
     }
     
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         
         var itemView: UIImageView
-        itemView = UIImageView(frame: CGRect(x: carousel.frame.width * 0.1,
-                                             y: carousel.frame.height * 0.05,
+        itemView = UIImageView(frame: CGRect(x: 0,
+                                             y: 0,
                                              width: carousel.frame.width * 0.8,
                                              height: carousel.frame.height * 0.9))
         itemView.image = images[index]
         itemView.contentMode = .scaleAspectFill
         itemView.layer.cornerRadius = 5
         itemView.clipsToBounds = true
+        
         return itemView
     }
-    
-//    func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
-//        return value
-//    }
 }
 
 //MARK: - Top color collection view
