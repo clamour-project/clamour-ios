@@ -34,6 +34,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         carousel.type = .coverFlow
@@ -41,6 +42,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         carousel.clipsToBounds = true
         
         
+=======
+        carousel.type = .coverFlow
+>>>>>>> 6c353ae4eac2ef531f6ba1bb1a41d8c9bccd8ad6
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = 5
         carousel.reloadData()
