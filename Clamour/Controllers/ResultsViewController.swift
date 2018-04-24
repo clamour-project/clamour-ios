@@ -19,15 +19,30 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     var items: [Int] = []
     
-    let numberOfResultingPictures: Int = 10
+    var images: [UIImage] = []
+    
+    var count = 0;
     
     @IBOutlet weak var carousel: iCarousel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        for i in 0 ... numberOfResultingPictures {
-            items.append(i)
-        } 
+        
+    }
+    
+    
+    func convertBase64ToImage(base64String: String) -> UIImage {
+        
+        let decodedData = NSData(base64Encoded: base64String, options: NSData.Base64DecodingOptions(rawValue: 0) )
+        
+        var decodedimage = UIImage(data: decodedData! as Data)
+        
+        return decodedimage!
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     override func viewDidLoad() {
@@ -37,14 +52,24 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = miniature.bounds.width/12
         
+         for i in 0 ... dataResult.suitableClothes.count {
+            items.append(i)
+         }
+         
+         for i in 0 ... dataResult.suitableClothes.count-1 {
+            images.append(convertBase64ToImage(base64String: dataResult.suitableClothes[i]))
+         }
+ 
         print("type")
         print("\(dataResult.type)")
          print("suitableTypes")
         print("\(dataResult.suitableTypes)")
          print("suitableColors")
         print("\(dataResult.suitableColors)")
-        
+        //print("suitableClothes")
+        //print("\(dataResult.suitableClothes)")
     }
+   
     
     func numberOfItems(in carousel: iCarousel) -> Int {
         return items.count
@@ -65,8 +90,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
             //this `if ... else` statement because the view will be
             //recycled and used with other index values later
             itemView = UIImageView(frame: CGRect(x: carousel.frame.width*0.1, y: 0, width: carousel.frame.width*0.8, height: carousel.frame.height))
-            itemView.image = UIImage(named: "jl")
-            
+            itemView.image = images[count]
+            count+=1
             // CONTENT MODE
             itemView.contentMode = .scaleAspectFill
             //itemView.contentMode = .center
@@ -112,7 +137,7 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
 
         cell.colorRec.layer.cornerRadius = 5
         cell.colorRec.clipsToBounds = true
-        //cell.colorRec.backgroundColor = self.dataResult.adjacentColors[indexPath.row]
+
         cell.colorRec.backgroundColor = self.dataResult.suitableColors[indexPath.row]
         return cell;
     }
