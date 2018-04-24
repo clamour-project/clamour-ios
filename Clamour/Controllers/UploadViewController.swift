@@ -107,6 +107,7 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
         
         let imageData: Data = UIImageJPEGRepresentation(image, 0.4)!
         let imageStr = imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+        
         request.httpBody = imageStr.data(using: String.Encoding.utf8)
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
@@ -147,7 +148,12 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
                     alpha: 1)]
             }
             
-            destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol)
+            var suitClothes: [String] = []
+            for (_, object) in json["suitable-clothes"] {
+                suitClothes.append(object.string!)
+            }
+            
+            destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol, suitClothes: suitClothes )
             destVC.miniatureImage = myImageView.image
         }
         
