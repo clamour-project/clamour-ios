@@ -144,22 +144,6 @@
             </objects>
             <point key="canvasLocation" x="-1298" y="2190"/>
         </scene>
-        <!--Saved-->
-        <scene sceneID="KYR-LM-dZJ">
-            <objects>
-                <viewController id="nQf-E0-22u" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DNs-Md-apZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="MLP-pv-KfG"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Saved" image="heart" selectedImage="heart" id="jGP-6x-D6l"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MEa-oA-4RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-212" y="671.51424287856082"/>
-        </scene>
         <!--Clamour-->
         <scene sceneID="UGJ-vD-RB2">
             <objects>
@@ -346,22 +330,6 @@ labore et dolore magna aliqua.</string>
             </objects>
             <point key="canvasLocation" x="552.79999999999995" y="1464.9175412293855"/>
         </scene>
-        <!--Explore-->
-        <scene sceneID="H2Z-jV-kDO">
-            <objects>
-                <viewController id="TmI-4S-cLI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WIZ-Eo-1LX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.75570999327676136" green="1" blue="0.79729917520985816" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="3Qk-Z5-mzP"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="explore" selectedImage="explore" id="m6k-I5-NCz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8No-rZ-Pr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2300" y="672"/>
-        </scene>
         <!--Data Source-->
         <scene sceneID="mtK-St-FvJ">
             <objects>
@@ -393,9 +361,7 @@ labore et dolore magna aliqua.</string>
                     </tabBar>
                     <connections>
                         <segue destination="EvG-Ok-426" kind="relationship" relationship="viewControllers" id="aol-0o-Xdy"/>
-                        <segue destination="TmI-4S-cLI" kind="relationship" relationship="viewControllers" id="e2a-Xa-LQR"/>
                         <segue destination="v5x-yD-woH" kind="relationship" relationship="viewControllers" id="dA7-ES-h6L"/>
-                        <segue destination="nQf-E0-22u" kind="relationship" relationship="viewControllers" id="PMB-Av-hN4"/>
                         <segue destination="gk5-5u-ZEo" kind="relationship" relationship="viewControllers" id="Y7H-20-5YV"/>
                     </connections>
                 </tabBarController>
@@ -464,8 +430,6 @@ labore et dolore magna aliqua.</string>
     <resources>
         <image name="add" width="25" height="25"/>
         <image name="calendar" width="23" height="23"/>
-        <image name="explore" width="25" height="25"/>
-        <image name="heart" width="28" height="25"/>
         <image name="profile" width="23" height="25"/>
     </resources>
 </document>

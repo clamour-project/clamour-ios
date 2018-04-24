@@ -11,13 +11,11 @@ import Foundation
 class Result {
     var type: String = ""
     var suitableTypes: [String] = []
-    var adjacentColors: [UIColor] = []
-    var coplementaryColors: [UIColor] = []
+    var suitableColors: [UIColor] = []
     
-    init(type: String, suitable: [String], adjColors: [UIColor], copColors: [UIColor]) {
+    init(type: String, suitable: [String], suitColors: [UIColor]) {
         self.type = type
         self.suitableTypes = suitable
-        self.adjacentColors = adjColors
-        self.coplementaryColors = copColors
+        self.suitableColors = suitColors
     }
 }
