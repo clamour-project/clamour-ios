@@ -25,6 +25,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     @IBOutlet weak var carousel: iCarousel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -51,15 +53,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = miniature.bounds.width/12
+
         
-         for i in 0 ... dataResult.suitableClothes.count {
-            items.append(i)
-         }
-         
-         for i in 0 ... dataResult.suitableClothes.count-1 {
-            images.append(convertBase64ToImage(base64String: dataResult.suitableClothes[i]))
-         }
- 
+        
         print("type")
         print("\(dataResult.type)")
          print("suitableTypes")
@@ -72,8 +68,15 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
    
     
     func numberOfItems(in carousel: iCarousel) -> Int {
+        for i in 0 ... dataResult.suitableClothes.count-1 {
+            items.append(i)
+        }
+        for i in 0 ... dataResult.suitableClothes.count-1 {
+            images.append(convertBase64ToImage(base64String: dataResult.suitableClothes[i]))
+        }
         return items.count
     }
+    
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         var label: UILabel
