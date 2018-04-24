@@ -175,7 +175,7 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
 }
 
 
-extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource/*, UICollectionViewFlowLayout*/ {
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10+2
     }
@@ -183,10 +183,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // TODO !!!!!
-//        if (indexPath.row == 0 || indexPath.row == 11) {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
-//            return cell
-//        }
+        if (indexPath.row == 0 || indexPath.row == 11) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
+            cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: 15, height: collectionView.frame.height)
+            return cell
+        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryItem", for: indexPath) as! CategoryCollectionViewCell
         
@@ -194,13 +195,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.imageView.layer.cornerRadius = cell.imageView.bounds.height/2
         cell.clipsToBounds = true
         cell.imageView.contentMode = .scaleAspectFill
-        
+        cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: collectionView.frame.height, height: collectionView.frame.height)
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: screenWidth, height: screenWidth)
-//    }
-    
-    
+
 }
