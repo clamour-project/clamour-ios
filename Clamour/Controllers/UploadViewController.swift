@@ -153,6 +153,9 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
                 suitClothes.append(object.string!)
             }
             
+            
+             //print(String.init(data: data, encoding: String.Encoding.utf8)!)
+            
             destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol, suitClothes: suitClothes )
             destVC.miniatureImage = myImageView.image
         }
