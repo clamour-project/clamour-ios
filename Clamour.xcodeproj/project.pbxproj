@@ -23,6 +23,7 @@
 		C3EFC6B2208F4EAD00A83BAC /* ExpandedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC6B0208F4EAC00A83BAC /* ExpandedViewCell.swift */; };
 		C3EFC6B3208F4EAD00A83BAC /* ExpandableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC6B1208F4EAD00A83BAC /* ExpandableViewCell.swift */; };
 		C3EFC6B5208F4F3900A83BAC /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC6B4208F4F3900A83BAC /* ResultsViewController.swift */; };
+		C3EFC6B7208F515000A83BAC /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC6B6208F515000A83BAC /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		C3EFC6B0208F4EAC00A83BAC /* ExpandedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedViewCell.swift; sourceTree = "<group>"; };
 		C3EFC6B1208F4EAD00A83BAC /* ExpandableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableViewCell.swift; sourceTree = "<group>"; };
 		C3EFC6B4208F4F3900A83BAC /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		C3EFC6B6208F515000A83BAC /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				C3EFC6B1208F4EAD00A83BAC /* ExpandableViewCell.swift */,
 				C3EFC6B0208F4EAC00A83BAC /* ExpandedViewCell.swift */,
 				C3EFC6A9208F4D4B00A83BAC /* ColorMatchViewCell.swift */,
+				C3EFC6B6208F515000A83BAC /* CategoryCollectionViewCell.swift */,
 			);
 			name = Cells;
 			path = Clamour/Views/Cells;
@@ -290,6 +293,7 @@
 				C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */,
 				C3EFC6AD208F4D4B00A83BAC /* ColorMatchViewCell.swift in Sources */,
 				1DB5A132208F3869008ECF6D /* ProfileViewController.swift in Sources */,
+				C3EFC6B7208F515000A83BAC /* CategoryCollectionViewCell.swift in Sources */,
 				1DB5A130208F3869008ECF6D /* MainTabController.swift in Sources */,
 				1D21719D207BFB360052D824 /* AppDelegate.swift in Sources */,
 				C3EFC6B2208F4EAD00A83BAC /* ExpandedViewCell.swift in Sources */,

@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.expandableDelegate = self
-        tableView.animation = .automatic
+        //tableView.animation = .automatic
         tableView.openAll()
     }
 }
@@ -101,10 +101,13 @@ extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/
         if (indexPath.row >= 1) {
             let cell: ExpandedViewCell!
             cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell") as! ExpandedViewCell
+            cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
             return [cell]
         }
         return nil;
     }
+    
+
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
         return [100]
@@ -139,6 +142,8 @@ extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/
         }
     }
     
+    
+    
     func expandableTableView(_ expandableTableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -167,4 +172,35 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+}
+
+
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource/*, UICollectionViewFlowLayout*/ {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10+2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // TODO !!!!!
+//        if (indexPath.row == 0 || indexPath.row == 11) {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
+//            return cell
+//        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryItem", for: indexPath) as! CategoryCollectionViewCell
+        
+        cell.imageView.image = UIImage(named: "jl")
+        cell.imageView.layer.cornerRadius = cell.imageView.bounds.height/2
+        cell.clipsToBounds = true
+        cell.imageView.contentMode = .scaleAspectFill
+        
+        return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: screenWidth, height: screenWidth)
+//    }
+    
+    
 }

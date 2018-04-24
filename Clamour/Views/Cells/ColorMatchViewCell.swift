@@ -10,4 +10,9 @@ import UIKit
 
 class ColorMatchViewCell: UICollectionViewCell {
     @IBOutlet weak var colorRec: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
 }
