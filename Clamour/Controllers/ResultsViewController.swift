@@ -34,7 +34,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        carousel.type = .cylinder
+        carousel.type = .coverFlow
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = 5
         carousel.reloadData()
