@@ -85,7 +85,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.expandableDelegate = self
-        //tableView.animation = .automatic
         //tableView.openAll()
     }
     

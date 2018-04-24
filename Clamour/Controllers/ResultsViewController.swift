@@ -64,8 +64,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         itemView.contentMode = .scaleAspectFill
         itemView.layer.cornerRadius = 5
         itemView.clipsToBounds = true
-        itemView.layer.borderWidth = 0.5
-        itemView.layer.borderColor = UIColor(red: 220.0/255, green: 220.0/255, blue: 220.0/255, alpha: 1).cgColor
+        //itemView.layer.borderWidth = 0.5
+        //itemView.layer.borderColor = UIColor(red: 220.0/255, green: 220.0/255, blue: 220.0/255, alpha: 1).cgColor
         
         return itemView
     }

@@ -1,0 +1,6 @@
+framework module ComplimentaryGradientView {
+  umbrella header "ComplimentaryGradientView-umbrella.h"
+
+  export *
+  module * { export * }
+}
