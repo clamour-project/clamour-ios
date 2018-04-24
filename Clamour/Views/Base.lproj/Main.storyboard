@@ -23,18 +23,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-xN-Nl2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0yO-xH-sJt">
+                                <rect key="frame" x="177" y="331" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ypk-xN-Nl2" firstAttribute="centerX" secondItem="R6A-yf-tBM" secondAttribute="centerX" id="Bvk-yt-f9N"/>
                             <constraint firstItem="ypk-xN-Nl2" firstAttribute="centerY" secondItem="R6A-yf-tBM" secondAttribute="centerY" id="IKq-Zk-kVc"/>
                             <constraint firstItem="ypk-xN-Nl2" firstAttribute="height" secondItem="qhe-uf-m0N" secondAttribute="height" id="RM6-TR-pd8"/>
+                            <constraint firstItem="0yO-xH-sJt" firstAttribute="centerX" secondItem="ypk-xN-Nl2" secondAttribute="centerX" id="TdF-k9-8dO"/>
                             <constraint firstItem="ypk-xN-Nl2" firstAttribute="width" secondItem="qhe-uf-m0N" secondAttribute="width" id="aTE-bd-GWA"/>
+                            <constraint firstItem="0yO-xH-sJt" firstAttribute="centerY" secondItem="ypk-xN-Nl2" secondAttribute="centerY" id="eX3-pA-y7o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R6A-yf-tBM"/>
                     </view>
                     <navigationItem key="navigationItem" id="bZy-72-bmB"/>
                     <connections>
+                        <outlet property="indicatorActivity" destination="0yO-xH-sJt" id="Xc4-jl-l65"/>
                         <outlet property="myImageView" destination="ypk-xN-Nl2" id="9cJ-we-Jvz"/>
                         <segue destination="Msk-rp-RDf" kind="push" identifier="resultsShow" id="ECC-ts-T0G"/>
                     </connections>
