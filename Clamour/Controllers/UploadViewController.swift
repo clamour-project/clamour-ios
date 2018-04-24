@@ -160,8 +160,23 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             
              //print(String.init(data: data, encoding: String.Encoding.utf8)!)
             
-            destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol, suitClothes: suitClothes )
-            destVC.miniatureImage = myImageView.image
+            if (suitClothes.count == 0) {
+                let alertC = UIAlertController(title: "No matches found", message: "Please, retake a photo and try again.", preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                    (alert) in
+                }
+                alertC.addAction(ok)
+                
+                //TODO: delete photo after OK & show menu
+                self.present(alertC, animated: true, completion: {
+                    self.myImageView.image = nil
+                    self.chooseSourceOfPhoto()
+                })
+                
+            }else {
+                destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol, suitClothes: suitClothes )
+                destVC.miniatureImage = myImageView.image
+            }
         }
         
     }
