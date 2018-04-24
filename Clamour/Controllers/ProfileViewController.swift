@@ -84,6 +84,7 @@ class ProfileViewController: UIViewController {
             UserDefaults.standard.set(0, forKey: "lastSearchedImage")
             UserDefaults.standard.synchronize()
         }
+        tableView.reloadData()
     }
     
     var isOpened = false
@@ -127,7 +128,7 @@ extension ProfileViewController: ExpandableDelegate {
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return 4;
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,8 +144,15 @@ extension ProfileViewController: ExpandableDelegate {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell.frame.width)
             return cell
         } else {
-            let cell: ExpandableCell!
-            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell") as! ExpandableCell
+            let cell: ExpandableViewCell!
+            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell") as! ExpandableViewCell
+            if (indexPath.row == 1) {
+                cell.label.text = "Searched"
+            } else if (indexPath.row == 2) {
+                cell.label.text = "Found"
+            } else if (indexPath.row == 3) {
+                cell.label.text = "Colors"
+            }
             return cell
         }
     }
@@ -184,7 +192,13 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return UserDefaults.standard.integer(forKey: "lastFoundImage")
+        if (collectionView.tag == 1) {
+            return UserDefaults.standard.integer(forKey: "lastSearchedImage")
+        }
+        if (collectionView.tag == 2) {
+            return UserDefaults.standard.integer(forKey: "lastFoundImage")
+        }
+        return 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

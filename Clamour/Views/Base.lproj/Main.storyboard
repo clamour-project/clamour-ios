@@ -159,13 +159,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aXO-LB-0xZ" customClass="ExpandableTableView" customModule="ExpandableCell">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="441"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="TOw-lB-kto">
-                                    <rect key="frame" x="0.0" y="344" width="375" height="161"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="170" id="4bQ-Zk-61L" customClass="ProfileCell" customModule="Clamour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
@@ -246,6 +241,9 @@ labore et dolore magna aliqua.</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="label" destination="oNj-CE-MHv" id="qZT-ra-U8i"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell" rowHeight="100" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="244" width="375" height="100"/>
@@ -310,7 +308,7 @@ labore et dolore magna aliqua.</string>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aXO-LB-0xZ" firstAttribute="width" secondItem="kGR-gu-Jhw" secondAttribute="width" id="1cp-xA-7mF"/>
-                            <constraint firstItem="aXO-LB-0xZ" firstAttribute="height" secondItem="kGR-gu-Jhw" secondAttribute="height" constant="-113" id="MxS-eW-Z1h"/>
+                            <constraint firstItem="aXO-LB-0xZ" firstAttribute="height" secondItem="kGR-gu-Jhw" secondAttribute="height" id="MxS-eW-Z1h"/>
                             <constraint firstItem="aXO-LB-0xZ" firstAttribute="top" secondItem="V9F-f5-6QK" secondAttribute="top" id="kSQ-dw-gkD"/>
                             <constraint firstItem="aXO-LB-0xZ" firstAttribute="leading" secondItem="V9F-f5-6QK" secondAttribute="leading" id="wcG-Et-q7Q"/>
                         </constraints>

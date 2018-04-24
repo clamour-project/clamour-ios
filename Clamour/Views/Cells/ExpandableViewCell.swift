@@ -10,6 +10,8 @@ import ExpandableCell
 
 class ExpandableViewCell: ExpandableCell {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
