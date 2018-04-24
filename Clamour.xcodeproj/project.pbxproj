@@ -22,6 +22,7 @@
 		2A3B6E25208DEDDD007DE08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B6E24208DEDDD007DE08B /* Assets.xcassets */; };
 		C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */; };
 		C3EFC68D208E725500A83BAC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC68C208E725500A83BAC /* Result.swift */; };
+		C3EFC696208F3F6200A83BAC /* ColorMatchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC695208F3F6200A83BAC /* ColorMatchViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clamour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 		C3EFC68C208E725500A83BAC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		C3EFC695208F3F6200A83BAC /* ColorMatchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +113,12 @@
 		C3EFC685208A822700A83BAC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1DB5A135208F3884008ECF6D /* ExpandableViewCell.swift */,
-				1DB5A136208F3884008ECF6D /* ExpandedViewCell.swift */,
-				1DB5A134208F3884008ECF6D /* ProfileCell.swift */,
+
+				C3EFC67B208A114E00A83BAC /* ProfileCell.swift */,
+				C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */,
+				C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */,
+				C3EFC695208F3F6200A83BAC /* ColorMatchViewCell.swift */,
+
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -280,8 +285,11 @@
 				1DB5A132208F3869008ECF6D /* ProfileViewController.swift in Sources */,
 				1DB5A130208F3869008ECF6D /* MainTabController.swift in Sources */,
 				1D21719D207BFB360052D824 /* AppDelegate.swift in Sources */,
-				1DB5A137208F3885008ECF6D /* ProfileCell.swift in Sources */,
-				1DB5A131208F3869008ECF6D /* ResultsViewController.swift in Sources */,
+
+				C3EFC696208F3F6200A83BAC /* ColorMatchViewCell.swift in Sources */,
+				C3EFC67C208A114E00A83BAC /* ProfileCell.swift in Sources */,
+				1D348080208BAB6D0070CD17 /* ResultsViewController.swift in Sources */,
+
 				C3EFC68D208E725500A83BAC /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

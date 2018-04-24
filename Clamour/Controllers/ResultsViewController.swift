@@ -11,6 +11,7 @@ import UIKit
 import iCarousel
 
 class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var miniature: UIImageView!
     var miniatureImage: UIImage!
@@ -35,6 +36,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = miniature.bounds.width/12
+        
+        
+        
         
         print("\(dataResult.type)")
         print("\(dataResult.suitableTypes)")
@@ -96,6 +100,21 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     }
 }
 
-extension ResultsViewController {
+extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataResult.adjacentColors.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCell", for: indexPath) as! ColorMatchViewCell
+
+        cell.colorRec.layer.cornerRadius = 5
+        cell.colorRec.clipsToBounds = true
+        //cell.colorRec.backgroundColor = self.dataResult.adjacentColors[indexPath.row]
+        
+        return cell;
+    }
+    
     
 }
