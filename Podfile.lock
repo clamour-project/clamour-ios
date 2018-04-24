@@ -1,16 +1,36 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - ExpandableCell (1.2.2)
+  - FSCalendar (2.7.9)
+  - iCarousel (1.8.3)
+  - IGListKit (2.0.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - ExpandableCell
+  - FSCalendar
+  - iCarousel
+  - IGListKit (~> 2.0.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - DZNEmptyDataSet
     - ExpandableCell
+    - FSCalendar
+    - iCarousel
+    - IGListKit
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IGListKit: ee255e4e61865bc3e01ca96b690c5435c2887849
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: a465f40ab4cac15f4d6ab7f6eabf44970a345130
+PODFILE CHECKSUM: 87e2224f357dbe2e972ba315089e247ff4c53acc
 
 COCOAPODS: 1.5.0
