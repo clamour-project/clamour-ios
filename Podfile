@@ -11,6 +11,5 @@ target 'Clamour' do
 	pod 'DZNEmptyDataSet'
 	pod 'FSCalendar'
 	pod 'iCarousel'
-	pod 'ComplimentaryGradientView'
     pod 'Realm'
 end

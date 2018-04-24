@@ -3,7 +3,7 @@
 //  Clamour
 //
 //  Created by Anne Manzhura on 10.04.2018.
-//
+//  Developed by San Nguyen and Anne Manzhura
 
 import UIKit
 import ExpandableCell
@@ -85,16 +85,20 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.expandableDelegate = self
-        //tableView.openAll()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //tableView.openAll()
+        tableView.animation = .right
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.openAll()
+        tableView.animation = .none
     }
 }
 
 //MARK: - TableView
-extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/ ExpandableDelegate {
+extension ProfileViewController: ExpandableDelegate {
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
         if (indexPath.row >= 1) {
@@ -176,7 +180,7 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10+2
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

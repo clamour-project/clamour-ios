@@ -3,7 +3,7 @@
 //  Clamour
 //
 //  Created by Anne Manzhura on 09.04.2018.
-//
+//  San Nguyen and Anne Manzhura
 
 import Foundation
 import UIKit
@@ -20,6 +20,7 @@ class UploadViewController : UIViewController
     func chooseSourceOfPhoto()
     {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
         alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
             self.openCamera()
         }))

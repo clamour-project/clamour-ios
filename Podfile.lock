@@ -1,5 +1,4 @@
 PODS:
-  - ComplimentaryGradientView (0.1.7)
   - DZNEmptyDataSet (1.8.1)
   - ExpandableCell (1.2.2)
   - FSCalendar (2.7.9)
@@ -10,7 +9,6 @@ PODS:
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
-  - ComplimentaryGradientView
   - DZNEmptyDataSet
   - ExpandableCell
   - FSCalendar
@@ -20,7 +18,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - ComplimentaryGradientView
     - DZNEmptyDataSet
     - ExpandableCell
     - FSCalendar
@@ -29,7 +26,6 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  ComplimentaryGradientView: 890f99feb7864d95ac2dc6b622afb3b81e10ac5c
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
   FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
@@ -37,6 +33,6 @@ SPEC CHECKSUMS:
   Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 46843310c450b95152e7742ffa15128bfe4ab490
+PODFILE CHECKSUM: f64ee4b9694ec81ac2c851a2c2b074fb0375b508
 
 COCOAPODS: 1.5.0

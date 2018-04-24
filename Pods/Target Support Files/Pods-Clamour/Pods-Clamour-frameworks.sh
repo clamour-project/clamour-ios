@@ -143,7 +143,6 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ComplimentaryGradientView/ComplimentaryGradientView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework"
@@ -152,7 +151,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/ComplimentaryGradientView/ComplimentaryGradientView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework"

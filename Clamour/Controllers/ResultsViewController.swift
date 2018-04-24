@@ -3,7 +3,7 @@
 //  Clamour
 //
 //  Created by Anne Manzhura on 21.04.2018.
-//  Copyright © 2018 Udacity. All rights reserved.
+//  San Nguyen and Anne Manzhura
 //
 
 import Foundation
@@ -64,11 +64,18 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         itemView.contentMode = .scaleAspectFill
         itemView.layer.cornerRadius = 5
         itemView.clipsToBounds = true
-        //itemView.layer.borderWidth = 0.5
-        //itemView.layer.borderColor = UIColor(red: 220.0/255, green: 220.0/255, blue: 220.0/255, alpha: 1).cgColor
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector(("tappedImage:")))
+        itemView.addGestureRecognizer(tapRecognizer)
+        itemView.isUserInteractionEnabled = true
         
         return itemView
     }
+    
+    func tappedImage(sender: UIImageView) {
+        print("tapped!")
+    }
+    
     
     func carouselItemWidth(_ carousel: iCarousel) -> CGFloat {
         return carousel.frame.width * 0.85
