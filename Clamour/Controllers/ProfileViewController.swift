@@ -88,6 +88,10 @@ class ProfileViewController: UIViewController {
         //tableView.animation = .automatic
         //tableView.openAll()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //tableView.openAll()
+    }
 }
 
 //MARK: - TableView

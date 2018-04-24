@@ -36,7 +36,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        carousel.type = .cylinder
+        carousel.type = .coverFlow
         carousel.scrollSpeed = 0.8
         carousel.clipsToBounds = true
         
@@ -65,8 +65,14 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         itemView.contentMode = .scaleAspectFill
         itemView.layer.cornerRadius = 5
         itemView.clipsToBounds = true
+        itemView.layer.borderWidth = 0.5
+        itemView.layer.borderColor = UIColor(red: 220.0/255, green: 220.0/255, blue: 220.0/255, alpha: 1).cgColor
         
         return itemView
+    }
+    
+    func carouselItemWidth(_ carousel: iCarousel) -> CGFloat {
+        return carousel.frame.width * 0.85
     }
 }
 
