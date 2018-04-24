@@ -35,6 +35,11 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     override func viewDidLoad() {
         super.viewDidLoad()
         carousel.type = .cylinder
+        carousel.scrollSpeed = 0.8
+        carousel.clipsToBounds = true
+        //carousel.isVertical = true
+        
+        
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = 5
         carousel.reloadData()
