@@ -17,11 +17,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //self.profileImage.layer.cornerRadius = profileImage.bounds.width/2
-        //self.profileImage.layer.borderWidth = 1
-        //self.profileImage.layer.borderColor = UIColor.lightGray.cgColor
         
-        //self.btnEditProfile.layer.cornerRadius = 5
     }
     
     @IBAction func editProfile(_ sender: Any) {
@@ -90,7 +86,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         tableView.expandableDelegate = self
         //tableView.animation = .automatic
-        tableView.openAll()
+        //tableView.openAll()
     }
 }
 
@@ -175,28 +171,19 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
 }
 
 
-extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10+2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // TODO !!!!!
-//        if (indexPath.row == 0 || indexPath.row == 11) {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
-//            cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: 15, height: collectionView.frame.height)
-//            return cell
-//        }
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryItem", for: indexPath) as! CategoryCollectionViewCell
         
         cell.imageView.image = UIImage(named: "jl")
         cell.imageView.layer.cornerRadius = cell.imageView.bounds.height/2
         cell.clipsToBounds = true
         cell.imageView.contentMode = .scaleAspectFill
-        //?
-        cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: collectionView.frame.height, height: collectionView.frame.height)
+        
         return cell
     }
 
