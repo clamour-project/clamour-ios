@@ -29,17 +29,6 @@ class UploadViewController : UIViewController
         }))
         
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-        /*
-         switch UIDevice.current.userInterfaceIdiom {
-         case .pad:
-         alert.popoverPresentationController?.sourceView = sender
-         alert.popoverPresentationController?.sourceRect = sender.bounds
-         alert.popoverPresentationController?.permittedArrowDirections = .up
-         default:
-         break
-         }
-         */
-        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -97,10 +86,6 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
          instead of `UIImagePickerControllerEditedImage`
          */
         
-        //if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
-        //    self.myImageView.image = editedImage
-        //}
-        
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.myImageView.image = image
             submit(image: image)
@@ -149,29 +134,20 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             let json = try! JSON(data: data)
             
             var type: String = ""
-            if let t = json["types"][0].string { type = t }
+            if let t = json["main-type"].string { type = t }
             
             let stypes = json["suitable-types"].arrayValue.map({$0.stringValue})
             
-            var adjCol: [UIColor] = []
-            for (_, object) in json["adjacent-colors"] {
-                adjCol += [UIColor(
-                    red: CGFloat(object["red"].double!),
-                    green: CGFloat(object["green"].double!),
-                    blue: CGFloat(object["blue"].double!),
+            var suitCol: [UIColor] = []
+            for (_, object) in json["suitable-colors"] {
+                suitCol += [UIColor(
+                    red: (CGFloat(object["red"].double!)/255),
+                    green: (CGFloat(object["green"].double!)/255),
+                    blue: (CGFloat(object["blue"].double!)/255),
                     alpha: 1)]
             }
             
-            var copCol: [UIColor] = []
-            for (_, object) in json["coplementary-colors"] {
-                copCol += [UIColor(
-                    red: CGFloat(object["red"].double!),
-                    green: CGFloat(object["green"].double!),
-                    blue: CGFloat(object["blue"].double!),
-                    alpha: 1)]
-            }
-            
-            destVC.dataResult = Result.init(type: type, suitable: stypes, adjColors: adjCol, copColors: copCol)
+            destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol)
             destVC.miniatureImage = myImageView.image
         }
         

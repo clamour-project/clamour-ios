@@ -37,13 +37,13 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = miniature.bounds.width/12
         
-        
-        
-        
+        print("type")
         print("\(dataResult.type)")
+         print("suitableTypes")
         print("\(dataResult.suitableTypes)")
-        print("\(dataResult.adjacentColors)")
-        print("\(dataResult.coplementaryColors)")
+         print("suitableColors")
+        print("\(dataResult.suitableColors)")
+        
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {
@@ -53,6 +53,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         var label: UILabel
         var itemView: UIImageView
+        //var button: UIButton
         
         //reuse view if available, otherwise create a new view
         if let view = view as? UIImageView {
@@ -87,7 +88,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         //views outside of the `if (view == nil) {...}` check otherwise
         //you'll get weird issues with carousel item content appearing
         //in the wrong place in the carousel
-        label.text = "\(items[index])"
+        //label.text = "\(items[index])"
         
         return itemView
     }
@@ -103,7 +104,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
 extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataResult.adjacentColors.count
+        return dataResult.suitableColors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -112,9 +113,8 @@ extension ResultsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.colorRec.layer.cornerRadius = 5
         cell.colorRec.clipsToBounds = true
         //cell.colorRec.backgroundColor = self.dataResult.adjacentColors[indexPath.row]
-        
+        cell.colorRec.backgroundColor = self.dataResult.suitableColors[indexPath.row]
         return cell;
     }
-    
     
 }

@@ -12,7 +12,7 @@ class MainTabController : UITabBarController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedViewController=viewControllers?[4]
+        selectedViewController=viewControllers?[2]
     }
     
     
