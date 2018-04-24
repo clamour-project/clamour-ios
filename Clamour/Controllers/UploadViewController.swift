@@ -12,6 +12,8 @@ import SwiftyJSON
 class UploadViewController : UIViewController
 {
     
+    @IBOutlet weak var indicatorActivity: UIActivityIndicatorView!
+    
     @IBOutlet weak var myImageView: UIImageView!
     var imagePicker = UIImagePickerController()
     
@@ -64,6 +66,10 @@ class UploadViewController : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         chooseSourceOfPhoto()
+        indicatorActivity.isHidden = true
+        indicatorActivity.hidesWhenStopped = true
+        indicatorActivity.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.whiteLarge
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +106,11 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func submit(image: UIImage) {
+        
+        indicatorActivity.isHidden = false
+        indicatorActivity.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         guard let url = URL(string: "https://server-clamour.appspot.com/clamour-api") else { return }
@@ -160,6 +171,9 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
             
             
              //print(String.init(data: data, encoding: String.Encoding.utf8)!)
+            
+            indicatorActivity.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
             
             if (suitClothes.count == 0) {
                 let alertC = UIAlertController(title: "No matches found", message: "Please, retake a photo and try again.", preferredStyle: UIAlertControllerStyle.alert)
