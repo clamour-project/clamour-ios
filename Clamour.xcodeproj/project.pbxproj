@@ -21,6 +21,7 @@
 		C3EFC682208A744600A83BAC /* ExpandableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */; };
 		C3EFC684208A822100A83BAC /* ExpandedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */; };
 		C3EFC68D208E725500A83BAC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC68C208E725500A83BAC /* Result.swift */; };
+		C3EFC696208F3F6200A83BAC /* ColorMatchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC695208F3F6200A83BAC /* ColorMatchViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewCell.swift; sourceTree = "<group>"; };
 		C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedViewCell.swift; sourceTree = "<group>"; };
 		C3EFC68C208E725500A83BAC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		C3EFC695208F3F6200A83BAC /* ColorMatchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				C3EFC67B208A114E00A83BAC /* ProfileCell.swift */,
 				C3EFC681208A744600A83BAC /* ExpandableViewCell.swift */,
 				C3EFC683208A822100A83BAC /* ExpandedViewCell.swift */,
+				C3EFC695208F3F6200A83BAC /* ColorMatchViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				1D4C224A207D04480089A4C7 /* ProfileViewController.swift in Sources */,
 				C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */,
 				1D21719D207BFB360052D824 /* AppDelegate.swift in Sources */,
+				C3EFC696208F3F6200A83BAC /* ColorMatchViewCell.swift in Sources */,
 				C3EFC67C208A114E00A83BAC /* ProfileCell.swift in Sources */,
 				1D348080208BAB6D0070CD17 /* ResultsViewController.swift in Sources */,
 				C3EFC68D208E725500A83BAC /* Result.swift in Sources */,
