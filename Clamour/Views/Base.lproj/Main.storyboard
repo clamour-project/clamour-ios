@@ -172,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Jq8-uz-viJ">
-                                    <rect key="frame" x="0.0" y="550" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="374" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -234,7 +234,7 @@ labore et dolore magna aliqua.</string>
                                             <outlet property="username" destination="Avx-Rk-igR" id="3Zo-8s-6Rc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell1" rowHeight="46" id="s9v-Ts-87s" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell" rowHeight="46" id="s9v-Ts-87s" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="198" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s9v-Ts-87s" id="BCY-Dk-Nxy" customClass="CategoryViewCell" customModule="Clamour" customModuleProvider="target">
@@ -256,7 +256,7 @@ labore et dolore magna aliqua.</string>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell1" rowHeight="130" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell" rowHeight="130" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="244" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YqG-aX-nSr" id="Gwc-PG-pN7">
@@ -273,48 +273,6 @@ labore et dolore magna aliqua.</string>
                                             <constraints>
                                                 <constraint firstItem="gPJ-dD-MVc" firstAttribute="centerX" secondItem="Gwc-PG-pN7" secondAttribute="centerX" id="Qgl-AF-adQ"/>
                                                 <constraint firstItem="gPJ-dD-MVc" firstAttribute="centerY" secondItem="Gwc-PG-pN7" secondAttribute="centerY" id="nI8-iy-gwk"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell2" rowHeight="46" id="zlF-8h-pKQ" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="374" width="375" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlF-8h-pKQ" id="tpx-T2-8xN" customClass="CategoryViewCell" customModule="Clamour" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTN-Dx-oc0">
-                                                    <rect key="frame" x="25" y="11" width="315" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="xTN-Dx-oc0" firstAttribute="top" secondItem="tpx-T2-8xN" secondAttribute="topMargin" id="6wV-be-P84"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="xTN-Dx-oc0" secondAttribute="trailing" constant="20" id="YTJ-5K-5Q2"/>
-                                                <constraint firstItem="xTN-Dx-oc0" firstAttribute="leading" secondItem="tpx-T2-8xN" secondAttribute="leadingMargin" constant="10" id="iSJ-nU-ZaG"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell2" rowHeight="130" id="Gnh-QD-ATZ" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="420" width="375" height="130"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gnh-QD-ATZ" id="oCe-ny-tTc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXPANDED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq9-q8-i1n">
-                                                    <rect key="frame" x="143.5" y="54" width="88" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="nq9-q8-i1n" firstAttribute="centerX" secondItem="oCe-ny-tTc" secondAttribute="centerX" id="4gQ-CC-qUQ"/>
-                                                <constraint firstItem="nq9-q8-i1n" firstAttribute="centerY" secondItem="oCe-ny-tTc" secondAttribute="centerY" id="fNp-r2-kLb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

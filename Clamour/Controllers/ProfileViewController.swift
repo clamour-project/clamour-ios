@@ -98,13 +98,9 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/ ExpandableDelegate {
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
-        if (indexPath.row == 1) {
+        if (indexPath.row >= 1) {
             let cell: ExpandedViewCell!
-            cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell1") as! ExpandedViewCell
-            return [cell]
-        } else if (indexPath.row == 2) {
-            let cell: ExpandedViewCell!
-            cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell2") as! ExpandedViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "ExpCell") as! ExpandedViewCell
             return [cell]
         }
         return nil;
@@ -136,47 +132,16 @@ extension ProfileViewController: /*UITableViewDelegate, UITableViewDataSource,*/
             cell.profilePhoto.focusOnFaces = true
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell.frame.width)
             return cell
-        } else if (indexPath.row == 1) {
-            let cell: ExpandableCell!
-            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell1") as! ExpandableCell
-            return cell
         } else {
             let cell: ExpandableCell!
-            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell2") as! ExpandableCell
+            cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExbleCell") as! ExpandableCell
             return cell
         }
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
-        print("didSelectRow:\(indexPath)")
     }
     
     func expandableTableView(_ expandableTableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    /*
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: ProfileCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileCell
-        cell.profilePhoto.image = UIImage(named: "jl")
-        cell.profilePhoto.layer.cornerRadius = cell.profilePhoto.bounds.width/2
-        cell.username.text = "Username"
-        cell.profileInfo.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        cell.profilePhoto.focusOnFaces = true
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if(indexPath.row==0){
-            return 130;
-        } else { return 80; }
-    }*/
-    //
 }
 
 //MARK: - UIImagePickerControllerDelegate
