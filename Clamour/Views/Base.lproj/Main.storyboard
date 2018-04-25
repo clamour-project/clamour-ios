@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Upload View Controller-->
+        <!--Clamour-->
         <scene sceneID="gvm-qy-7Ua">
             <objects>
                 <viewController storyboardIdentifier="UploadViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ji5-sj-wMD" customClass="UploadViewController" customModule="Clamour" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R6A-yf-tBM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bZy-72-bmB"/>
+                    <navigationItem key="navigationItem" title="Clamour" id="bZy-72-bmB"/>
                     <connections>
                         <outlet property="indicatorActivity" destination="0yO-xH-sJt" id="Xc4-jl-l65"/>
                         <outlet property="myImageView" destination="ypk-xN-Nl2" id="9cJ-we-Jvz"/>
@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BE-7k-xLw">
-                                <rect key="frame" x="5" y="5" width="375" height="100"/>
+                                <rect key="frame" x="5" y="15" width="375" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uy0-1e-toq">
                                         <rect key="frame" x="10" y="10" width="80" height="80"/>
@@ -119,7 +119,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-ug-hwS" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="105" width="375" height="449"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="439"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Msk-rp-RDf" id="28Y-Wz-aaH"/>
@@ -135,11 +135,13 @@
                             <constraint firstItem="mGF-ug-hwS" firstAttribute="top" secondItem="2BE-7k-xLw" secondAttribute="bottom" id="H1j-n3-Maq"/>
                             <constraint firstItem="mGF-ug-hwS" firstAttribute="leading" secondItem="T1c-Kn-avs" secondAttribute="leading" id="Q7G-dB-5Ve"/>
                             <constraint firstItem="2BE-7k-xLw" firstAttribute="trailing" secondItem="T1c-Kn-avs" secondAttribute="trailing" constant="5" id="krf-3f-BON"/>
-                            <constraint firstItem="2BE-7k-xLw" firstAttribute="top" secondItem="T1c-Kn-avs" secondAttribute="top" constant="5" id="sCb-kv-nsT"/>
+                            <constraint firstItem="2BE-7k-xLw" firstAttribute="top" secondItem="T1c-Kn-avs" secondAttribute="top" constant="15" id="pP1-f6-yem"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T1c-Kn-avs"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rgr-LQ-eSR"/>
+                    <navigationItem key="navigationItem" title="Your Match" id="rgr-LQ-eSR">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="7yj-hx-58X"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="mGF-ug-hwS" id="oXc-Sx-FfI"/>
                         <outlet property="collectionView" destination="8ol-yC-buq" id="ScQ-Xx-k5l"/>
@@ -162,16 +164,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="170" id="4bQ-Zk-61L" customClass="ProfileCell" customModule="Clamour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="170"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="190" id="4bQ-Zk-61L" customClass="ProfileCell" customModule="Clamour" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4bQ-Zk-61L" id="VRL-03-bVf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-9V-JfN">
-                                                    <rect key="frame" x="40" y="20" width="140" height="140"/>
+                                                    <rect key="frame" x="35" y="26" width="135" height="135"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="135" id="88S-Z6-O4k"/>
+                                                        <constraint firstAttribute="height" constant="135" id="GgK-08-mBW"/>
                                                         <constraint firstAttribute="height" secondItem="cLD-9V-JfN" secondAttribute="width" multiplier="1:1" id="Seh-o5-Xtv"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -179,13 +183,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avx-Rk-igR">
-                                                    <rect key="frame" x="195" y="51" width="125" height="24"/>
+                                                    <rect key="frame" x="185" y="46" width="157" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQK-b3-a5f">
-                                                    <rect key="frame" x="188" y="83" width="147" height="48"/>
+                                                    <rect key="frame" x="185" y="80" width="157" height="48"/>
                                                     <string key="text">Lorem ipsum dolor sit amet,
 consectetur adipiscing elit, sed
 do eiusmod tempor incididunt ut
@@ -196,20 +200,15 @@ labore et dolore magna aliqua.</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="nQK-b3-a5f" secondAttribute="trailing" constant="40" id="1JR-Lp-hP1"/>
-                                                <constraint firstAttribute="bottom" secondItem="nQK-b3-a5f" secondAttribute="bottom" priority="250" constant="10" id="2PC-mf-93t"/>
-                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="8" symbolic="YES" id="DxU-BR-ZGR"/>
-                                                <constraint firstAttribute="bottom" secondItem="cLD-9V-JfN" secondAttribute="bottom" constant="10" id="Ixn-Vr-PK7"/>
-                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="top" secondItem="VRL-03-bVf" secondAttribute="topMargin" constant="40" id="JAZ-Hf-B2D"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Avx-Rk-igR" secondAttribute="trailing" constant="40" id="b9j-6V-Wq2"/>
-                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="top" secondItem="Avx-Rk-igR" secondAttribute="bottom" constant="8" id="exr-jY-q6q"/>
-                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="15" id="iue-9v-qNo"/>
-                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="8" symbolic="YES" id="lOd-wa-l7S"/>
-                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="8" symbolic="YES" id="m57-Yc-5Bp"/>
-                                                <constraint firstItem="cLD-9V-JfN" firstAttribute="top" secondItem="VRL-03-bVf" secondAttribute="top" constant="20" id="szT-90-UpS"/>
-                                                <constraint firstItem="cLD-9V-JfN" firstAttribute="leading" secondItem="VRL-03-bVf" secondAttribute="leading" constant="40" id="vi6-Y4-aBD"/>
-                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" symbolic="YES" id="wmZ-cE-F2G"/>
-                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cLD-9V-JfN" secondAttribute="trailing" symbolic="YES" id="xkc-HP-x8f"/>
+                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="top" secondItem="VRL-03-bVf" secondAttribute="topMargin" constant="35" id="2Kw-bZ-qZA"/>
+                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="15" id="Dpy-zQ-dlK"/>
+                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="15" id="Ezb-EJ-Bcn"/>
+                                                <constraint firstItem="nQK-b3-a5f" firstAttribute="top" secondItem="Avx-Rk-igR" secondAttribute="bottom" constant="10" id="Kae-Ah-j5x"/>
+                                                <constraint firstItem="cLD-9V-JfN" firstAttribute="top" secondItem="VRL-03-bVf" secondAttribute="topMargin" constant="15" id="LpN-l7-5dk"/>
+                                                <constraint firstAttribute="trailing" secondItem="nQK-b3-a5f" secondAttribute="trailing" constant="33" id="MD6-x2-UlH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Avx-Rk-igR" secondAttribute="trailing" constant="18" id="Phv-7f-BQa"/>
+                                                <constraint firstItem="Avx-Rk-igR" firstAttribute="leading" secondItem="cLD-9V-JfN" secondAttribute="trailing" constant="15" id="TLQ-hA-PBJ"/>
+                                                <constraint firstItem="cLD-9V-JfN" firstAttribute="leading" secondItem="VRL-03-bVf" secondAttribute="leadingMargin" constant="20" id="WVQ-Br-k4M"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -219,8 +218,8 @@ labore et dolore magna aliqua.</string>
                                             <outlet property="username" destination="Avx-Rk-igR" id="3Zo-8s-6Rc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell" rowHeight="46" id="s9v-Ts-87s" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="198" width="375" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell" rowHeight="46" id="s9v-Ts-87s" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="218" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s9v-Ts-87s" id="BCY-Dk-Nxy" customClass="CategoryViewCell" customModule="Clamour" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
@@ -245,8 +244,8 @@ labore et dolore magna aliqua.</string>
                                             <outlet property="label" destination="oNj-CE-MHv" id="qZT-ra-U8i"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell" rowHeight="100" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell" rowHeight="100" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YqG-aX-nSr" id="Gwc-PG-pN7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -314,9 +313,7 @@ labore et dolore magna aliqua.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V9F-f5-6QK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Clamour" id="D5y-h6-j0u">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="5sP-3a-ePz"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Clamour" id="D5y-h6-j0u"/>
                     <connections>
                         <outlet property="tableView" destination="aXO-LB-0xZ" id="5AA-pu-S18"/>
                     </connections>

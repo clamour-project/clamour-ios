@@ -9,24 +9,19 @@ import UIKit
 import ExpandableCell
 
 class ProfileViewController: UIViewController {
+    
     @IBOutlet weak var tableView: ExpandableTableView!
-    
-    
-    
     var imagePicker = UIImagePickerController()
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
     }
     
     @IBAction func editProfile(_ sender: Any) {
         //chooseSourceOfPhoto()
     }
     
-    
-    func chooseSourceOfPhoto()
-    {
+    func chooseSourceOfPhoto() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
             self.openCamera()
@@ -42,7 +37,7 @@ class ProfileViewController: UIViewController {
     }
     
     //MARK: - Open the camera
-    func openCamera(){
+    func openCamera() {
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             //If you dont want to edit the photo then you can set allowsEditing to false
@@ -56,8 +51,9 @@ class ProfileViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
     //MARK: - Choose image from camera roll
-    func openGallary(){
+    func openGallary() {
         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         //If you dont want to edit the photo then you can set allowsEditing to false
         imagePicker.allowsEditing = true
@@ -65,6 +61,7 @@ class ProfileViewController: UIViewController {
         self.present(imagePicker, animated: true, completion: nil)
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.expandableDelegate = self
@@ -115,13 +112,10 @@ extension ProfileViewController: ExpandableDelegate {
         return nil;
     }
     
-
-    
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
         return [100]
     }
-    
-    
+
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.row == 0) { return 170; }
         return 40;

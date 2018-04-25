@@ -23,11 +23,11 @@ class UploadViewController : UIViewController
     {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()
         }))
         
-        alert.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Choose from Camera Roll", style: .default, handler: { _ in
             self.openGallary()
         }))
         
@@ -35,8 +35,6 @@ class UploadViewController : UIViewController
         self.present(alert, animated: true, completion: nil)
     }
     
-    
-
     //MARK: - Open the camera
     func openCamera(){
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
@@ -47,7 +45,7 @@ class UploadViewController : UIViewController
             self.present(imagePicker, animated: true, completion: nil)
         }
         else{
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            let alert  = UIAlertController(title: "Warning", message: "No camera on this devise", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -106,7 +104,6 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func submit(image: UIImage) {
-        
         indicatorActivity.isHidden = false
         indicatorActivity.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
@@ -169,31 +166,30 @@ extension UploadViewController:  UIImagePickerControllerDelegate, UINavigationCo
                 suitClothes.append(object.string!)
             }
             
-            
-             //print(String.init(data: data, encoding: String.Encoding.utf8)!)
-            
             indicatorActivity.stopAnimating()
             UIApplication.shared.endIgnoringInteractionEvents()
             
             if (suitClothes.count == 0) {
+                let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                
                 let alertC = UIAlertController(title: "No matches found", message: "Please, retake a photo and try again.", preferredStyle: UIAlertControllerStyle.alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                     (alert) in
-                }
-                alertC.addAction(ok)
-                
-                //TODO: delete photo after OK & show menu
-                self.present(alertC, animated: true, completion: {
                     self.myImageView.image = nil
                     self.chooseSourceOfPhoto()
-                })
-                
+                    blurEffectView.removeFromSuperview()
+                }
+                alertC.addAction(ok)
+                blurEffectView.frame = self.view.bounds
+                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                self.view.addSubview(blurEffectView)
+                self.present(alertC, animated: true, completion: nil)
             }else {
                 destVC.dataResult = Result.init(type: type, suitable: stypes, suitColors: suitCol, suitClothes: suitClothes )
                 destVC.miniatureImage = myImageView.image
             }
         }
-        
     }
     
 }

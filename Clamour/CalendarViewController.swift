@@ -13,8 +13,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
     private weak var calendar: FSCalendar!
     
-    override func loadView() {//
-        
+    override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor.groupTableViewBackground
         self.view = view
@@ -31,7 +30,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "MyCalendar"
+        self.title = "Clamour"
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {

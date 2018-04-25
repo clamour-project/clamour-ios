@@ -73,17 +73,25 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         return itemView
     }
     
-    
-    
     @objc func tapDetected() {
         let image = images[carousel.currentItemIndex]
         if let data = UIImageJPEGRepresentation(image, 0.8) {
             let code = UserDefaults.standard.integer(forKey: "lastFoundImage")
             let filename = getDocumentsDirectory().appendingPathComponent("f\(code).jpeg")
-            try? data.write(to: filename)
-            print("Image saved in documents")
-            UserDefaults.standard.set(code + 1, forKey: "lastFoundImage")
-            UserDefaults.standard.synchronize()
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let save = UIAlertAction(title: "Save to profile", style: UIAlertActionStyle.default) {
+                (alert) in
+                try? data.write(to: filename)
+                UserDefaults.standard.set(code + 1, forKey: "lastFoundImage")
+                UserDefaults.standard.synchronize()
+                print("Image saved in documents")
+            }
+            let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+                (alert) in
+            }
+            alert.addAction(save)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
