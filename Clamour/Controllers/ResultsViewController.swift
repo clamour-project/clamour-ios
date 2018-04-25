@@ -60,7 +60,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
 //            }
 //            cols.append(dataResult.suitableColors[0])
 //            UserDefau
-            lts.standard.set(cols, forKey: "savedColors")
+            //lts.standard.set(cols, forKey: "savedColors")
 //            print("Color saved")
             UserDefaults.standard.synchronize()
         }
