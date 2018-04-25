@@ -32,6 +32,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         return decodedimage!
     }
     
+    var isSaved = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -43,6 +44,26 @@ class ResultsViewController: UIViewController, iCarouselDataSource, iCarouselDel
         miniature.image = miniatureImage
         miniature.layer.cornerRadius = 5
         carousel.reloadData()
+        
+        if (!isSaved) {
+            let image = miniature.image
+            if let data = UIImageJPEGRepresentation(image!, 0.8) {
+                let code = UserDefaults.standard.integer(forKey: "lastSearchedImage")
+                let filename = getDocumentsDirectory().appendingPathComponent("s\(code).jpeg")
+                try? data.write(to: filename)
+                UserDefaults.standard.set(code + 1, forKey: "lastSearchedImage")
+                print("Image saved in documents")
+            }
+//            var cols: [UIColor] = []
+//            if UserDefaults.standard.object(forKey: "savedColors") != nil {
+//                cols = UserDefaults.standard.array(forKey: "savedColors") as! [UIColor]
+//            }
+//            cols.append(dataResult.suitableColors[0])
+//            UserDefau
+            lts.standard.set(cols, forKey: "savedColors")
+//            print("Color saved")
+            UserDefaults.standard.synchronize()
+        }
     }
     
     func numberOfItems(in carousel: iCarousel) -> Int {

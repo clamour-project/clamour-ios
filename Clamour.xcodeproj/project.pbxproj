@@ -16,6 +16,7 @@
 		1DB5A133208F3869008ECF6D /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5A12F208F3869008ECF6D /* UploadViewController.swift */; };
 		2030A996E464B4D793FCA4DF /* Pods_Clamour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */; };
 		2A3B6E25208DEDDD007DE08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B6E24208DEDDD007DE08B /* Assets.xcassets */; };
+		C3D04EE52090635200119D91 /* ProfileColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D04EE42090635200119D91 /* ProfileColorCollectionViewCell.swift */; };
 		C3EFC67E208A64EA00A83BAC /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */; };
 		C3EFC68D208E725500A83BAC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC68C208E725500A83BAC /* Result.swift */; };
 		C3EFC6AC208F4D4B00A83BAC /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EFC6A8208F4D4B00A83BAC /* ProfileCell.swift */; };
@@ -41,6 +42,7 @@
 		A8958AB42C9C13F7E4BF18BC /* Pods-Clamour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clamour.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clamour/Pods-Clamour.release.xcconfig"; sourceTree = "<group>"; };
 		B4D8024C592CC92D77278F24 /* Pods-Clamour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clamour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clamour/Pods-Clamour.debug.xcconfig"; sourceTree = "<group>"; };
 		BC61613AF4F055B22DE319FE /* Pods_Clamour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clamour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D04EE42090635200119D91 /* ProfileColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3EFC67D208A64EA00A83BAC /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 		C3EFC68C208E725500A83BAC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		C3EFC6A8208F4D4B00A83BAC /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				C3EFC6B0208F4EAC00A83BAC /* ExpandedViewCell.swift */,
 				C3EFC6A9208F4D4B00A83BAC /* ColorMatchViewCell.swift */,
 				C3EFC6B6208F515000A83BAC /* CategoryCollectionViewCell.swift */,
+				C3D04EE42090635200119D91 /* ProfileColorCollectionViewCell.swift */,
 			);
 			name = Cells;
 			path = Clamour/Views/Cells;
@@ -299,6 +302,7 @@
 				C3EFC6B2208F4EAD00A83BAC /* ExpandedViewCell.swift in Sources */,
 				C3EFC68D208E725500A83BAC /* Result.swift in Sources */,
 				C3EFC6AC208F4D4B00A83BAC /* ProfileCell.swift in Sources */,
+				C3D04EE52090635200119D91 /* ProfileColorCollectionViewCell.swift in Sources */,
 				C3EFC6B5208F4F3900A83BAC /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

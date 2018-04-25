@@ -218,7 +218,7 @@ labore et dolore magna aliqua.</string>
                                             <outlet property="username" destination="Avx-Rk-igR" id="3Zo-8s-6Rc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell" rowHeight="46" id="s9v-Ts-87s" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExbleCell" rowHeight="46" id="s9v-Ts-87s" customClass="ExpandableViewCell" customModule="Clamour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="218" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s9v-Ts-87s" id="BCY-Dk-Nxy" customClass="CategoryViewCell" customModule="Clamour" customModuleProvider="target">
@@ -244,7 +244,7 @@ labore et dolore magna aliqua.</string>
                                             <outlet property="label" destination="oNj-CE-MHv" id="qZT-ra-U8i"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell" rowHeight="100" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpCell" rowHeight="100" id="YqG-aX-nSr" customClass="ExpandedViewCell" customModule="Clamour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="264" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YqG-aX-nSr" id="Gwc-PG-pN7">
@@ -284,6 +284,31 @@ labore et dolore magna aliqua.</string>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="imageView" destination="j4a-5N-5LM" id="sRA-4c-EqJ"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorProfile" id="wMk-wG-p22" customClass="ProfileColorCollectionViewCell" customModule="Clamour" customModuleProvider="target">
+                                                            <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZE-0o-nxF">
+                                                                        <rect key="frame" x="10" y="5" width="90" height="90"/>
+                                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="aZE-0o-nxF" secondAttribute="height" multiplier="1:1" id="kps-NY-wAC"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="aZE-0o-nxF" firstAttribute="leading" secondItem="wMk-wG-p22" secondAttribute="leading" constant="10" id="ezo-0x-d88"/>
+                                                                <constraint firstItem="aZE-0o-nxF" firstAttribute="top" secondItem="wMk-wG-p22" secondAttribute="top" constant="5" id="y39-Ma-A9v"/>
+                                                                <constraint firstAttribute="bottom" secondItem="aZE-0o-nxF" secondAttribute="bottom" constant="5" id="z8C-Sy-dGQ"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="colorView" destination="aZE-0o-nxF" id="EB1-NX-SMc"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>

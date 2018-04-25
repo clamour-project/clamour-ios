@@ -10,6 +10,8 @@ import ExpandableCell
 
 class ProfileViewController: UIViewController {
     
+    var colors: [UIColor] = []
+    
     @IBOutlet weak var tableView: ExpandableTableView!
     var imagePicker = UIImagePickerController()
     
@@ -75,12 +77,19 @@ class ProfileViewController: UIViewController {
         if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
             print("App has launched before")
         } else {
+            //let tmp: [UIColor] = []
             print("This is the first launch ever!")
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
             UserDefaults.standard.set(0, forKey: "lastFoundImage")
             UserDefaults.standard.set(0, forKey: "lastSearchedImage")
+            //UserDefaults.standard.set(tmp, forKey: "savedColors")
             UserDefaults.standard.synchronize()
         }
+//        if UserDefaults.standard.object(forKey: "savedColors") == nil {
+//            colors = []
+//        } else {
+//            colors = UserDefaults.standard.object(forKey: "savedColors") as! [UIColor]
+//        }
         tableView.reloadData()
     }
     
@@ -192,15 +201,35 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if (collectionView.tag == 2) {
             return UserDefaults.standard.integer(forKey: "lastFoundImage")
         }
+        if (collectionView.tag == 3) {
+            return colors.count
+        }
         return 0;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (collectionView.tag == 3) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorProfile", for: indexPath) as! ProfileColorCollectionViewCell
+            cell.colorView.backgroundColor = colors[indexPath.row]
+            cell.colorView.layer.cornerRadius = cell.colorView.frame.height / 2
+            return cell
+        }
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryItem", for: indexPath) as! CategoryCollectionViewCell
         
-        let code = UserDefaults.standard.integer(forKey: "lastFoundImage")
-        cell.imageView.image = UIImage(contentsOfFile: getDocumentsDirectory()
-            .appendingPathComponent("f\(code - 1 - indexPath.row).jpeg").path)
+        if (collectionView.tag == 1) {
+            let code = UserDefaults.standard.integer(forKey: "lastSearchedImage")
+            cell.imageView.image = UIImage(contentsOfFile: getDocumentsDirectory()
+                .appendingPathComponent("s\(code - 1 - indexPath.row).jpeg").path)
+        }
+        if (collectionView.tag == 2) {
+            let code = UserDefaults.standard.integer(forKey: "lastFoundImage")
+            cell.imageView.image = UIImage(contentsOfFile: getDocumentsDirectory()
+                .appendingPathComponent("f\(code - 1 - indexPath.row).jpeg").path)
+        }
+        
+        
         cell.imageView.layer.cornerRadius = cell.imageView.bounds.height/2
         cell.clipsToBounds = true
         cell.imageView.contentMode = .scaleAspectFill
